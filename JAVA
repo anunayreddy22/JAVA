@@ -1,0 +1,32 @@
+Programming Language
+
+JAVA
+
+
+Object
+Class
+JVM, JRE, JDK
+Memory Allocation
+Access Modifiers
+Inheritance
+this reference
+Abstraction
+Polymorphism
+Encapsulation
+Data Types
+Operators
+Identifiers
+Wrapper Class
+Taking Input From the User
+Loops, Break, Continue
+Arrays
+Strings
+java Collections
+Exception Handling
+Multi Threading
+Synchronization
+File Handling
+Java Networking
+JDBC
+Java Regex
+
