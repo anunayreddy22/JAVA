@@ -1,0 +1,102 @@
+1. Two Pointer
+
+
+
+
+
+
+
+
+
+2.Fast and Slow Pointer
+
+
+
+
+
+
+
+
+
+
+
+
+3. Sliding Window
+
+
+
+
+
+
+
+
+
+4. Prefix Sum
+
+
+
+
+
+
+
+
+
+
+1. Dynamic Programming:
+Dynamic programming is a method for solving complex problems by breaking them down into simpler subproblems and solving each subproblem only once, storing the results to avoid redundant computations.
+Applications:
+Fibonacci Sequence: Computing the nth Fibonacci number efficiently using dynamic programming to avoid recalculating overlapping subproblems.
+Shortest Path Problems: Finding the shortest path in a graph, such as the Floyd-Warshall algorithm or Dijkstra's algorithm.
+Knapsack Problem: Finding the maximum value of items that can be accommodated into a knapsack of limited capacity.
+Longest Common Subsequence (LCS): Finding the longest subsequence common to two sequences.
+
+2. Greedy Algorithms:
+Greedy algorithms make locally optimal choices at each step with the hope of finding a global optimum, without reconsidering previous choices.
+Applications:
+Minimum Spanning Tree (MST): Constructing a minimum spanning tree in a graph using algorithms like Kruskal's or Prim's algorithm.
+Dijkstra's Algorithm: Finding the shortest path in a weighted graph with non-negative weights.
+Huffman Coding: Constructing an optimal prefix-free binary encoding of characters based on their frequencies.
+Interval Scheduling: Selecting a maximum-size subset of mutually compatible activities from a set of activities that share resources.
+
+2. Backtracking:
+Backtracking is a method for systematically searching through all possible solutions to a problem by recursively trying different choices and backtracking when a dead-end is reached.
+Applications:
+N-Queens Problem: Placing N queens on an NxN chessboard such that no two queens attack each other.
+Sudoku Solver: Solving a partially filled Sudoku grid by backtracking to find a valid solution.
+Subset Sum: Finding if there exists a subset of a given set with a given sum.
+Hamiltonian Cycle: Finding a Hamiltonian cycle in a graph, if it exists.
+
+4. Divide and Conquer:
+Divide and Conquer is a technique that involves breaking down a problem into smaller subproblems, solving each subproblem independently, and then combining their solutions to solve the original problem.
+Applications:
+Binary Search: Searching for an element in a sorted array by repeatedly dividing the search interval in half.
+Merge Sort: Sorting an array by recursively dividing it into two halves, sorting the halves, and then merging them.
+Closest Pair of Points: Finding the pair of points with the smallest distance among a set of points in a plane.
+Strassen's Algorithm: Multiplying two matrices efficiently using recursive matrix multiplication.
+
+5. Branch and Bound:
+Branch and Bound is a method for solving optimization problems by systematically searching the solution space, pruning branches that are not promising and bounding the search to find the optimal solution.
+Applications:
+Traveling Salesman Problem (TSP): Finding the shortest possible route that visits each city exactly once and returns to the origin city.
+Integer Linear Programming: Solving optimization problems where the objective function and constraints are linear, with integer-valued variables.
+
+6. Randomized Algorithms:
+Randomized Algorithms use randomness to improve the efficiency or correctness of algorithms, often by introducing probabilistic choices or random sampling.
+Applications:
+Randomized QuickSort: Sorting elements by partitioning them around a randomly chosen pivot, improving the average-case time complexity of QuickSort.
+Randomized Primality Testing: Determining whether a given number is prime with high probability using probabilistic algorithms like Miller-Rabin primality test.
+Monte Carlo Simulation: Estimating numerical results or solving problems through repeated random sampling, such as estimating the value of pi or simulating complex systems.
+
+7. Graph Algorithms:
+Graph Algorithms focus on solving problems related to graphs, such as traversal, shortest paths, connectivity, and network flows.
+Applications:
+Topological Sorting: Ordering the vertices of a directed acyclic graph (DAG) such that for every directed edge uv, vertex u comes before vertex v in the ordering.
+Strongly Connected Components (SCC): Decomposing a directed graph into its strongly connected components using algorithms like Kosaraju's or Tarjan's algorithm.
+Network Flow Problems: Finding the maximum flow from a source to a sink in a flow network, such as the Ford-Fulkerson algorithm or Edmonds-Karp algorithm.
+
+8. String Matching Algorithms:
+String Matching Algorithms are used to find occurrences of a substring within a larger string or to search for patterns within text.
+Applications:
+Knuth-Morris-Pratt (KMP) Algorithm: Efficiently searching for occurrences of a pattern within a text string by avoiding unnecessary character comparisons.
+Rabin-Karp Algorithm: Searching for a substring within a text string by hashing substrings and comparing their hashes for equality.
+Suffix Tree and Suffix Array: Data structures for storing all suffixes of a string and efficiently searching for patterns in the string.
