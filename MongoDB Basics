@@ -1,1 +1,206 @@
+Prerequisites
+Before you go to study MongoDB, it is suitable if you have some prior knowledge of Databases, Frontend development, Text editor and execution of programs, etc. It will be beneficial if you have a basic understanding of database fundamentals because we’ll be developing high-performance databases (RDBMS).
 
+Table of Content
+
+Section 1: Introduction to MongoDB
+Section 2: Installation and Setup
+Section 3: Basics of MongoDB
+Section 4: Tools and Interfaces
+Section 5: CRUD Operations in MongoDB
+Section 6: MongoDB Operators
+Section 7: Aggregation
+Section 8: Indexing
+Section 9: Transactions and Data Modeling
+Section 10: Replication and Sharding
+Section 11: Security
+MongoDB Applications and Projects
+Section 1: Introduction to MongoDB
+In this section you will explore the core concepts, functionalities, and advantages over traditional relational databases. Unleash the potential of flexible data modeling for modern applications.
+
+Introduction to NoSQL
+Types of NoSQL Databases
+Introduction to MongoDB
+How MongoDB works?
+MongoDB vs RDBMS
+MongoDB vs MySQL
+Section 2: Installation and Setup
+Here in this section you will learn how to setting up MongoDB, a powerful NoSQL database. Here you will get a full details on installation process and essential configuration steps to get your MongoDB on various OS. Follow along to establish a strong foundation for your MongoDB applications.
+
+How to Install MongoDB on Windows?
+How to install MongoDB on MacOS?
+How to Install and Configure MongoDB in Ubuntu?
+How to Install MongoDB Compass on Windows
+How to Install MongoDB Atlas?
+Section 3: Basics of MongoDB
+This section of MongoDB tutorial breaks down core concepts like documents, collections, and queries. We’ll explore how MongoDB stores and retrieves data, empowering you to harness its flexibility for modern application development.
+
+MongoDB – Database, Collection, and Document
+MongoDB Cursor
+DataTypes in MongoDB
+What is ObjectId in MongoDB
+What is a MongoDB Query?
+Introduction to JSON
+Introduction to BSON and Types
+Section 4: Tools and Interfaces
+Navigating and managing your MongoDB data is a breeze with its diverse toolkit. So, here in this section, you will explore the official interfaces like MongoDB Compass and the command-line shell, empowering you to interact with your database effectively. This section equips you with the tools to unleash MongoDB’s potential.
+
+MongoDB Atlas
+MongoDB Compass
+What is MongoDB Shell
+Section 5: CRUD Operations in MongoDB
+In this section we will explores CRUD operations, Create, Read, Update, and Delete. Learn how to effectively insert, retrieve, modify, and remove documents within your MongoDB collections. This empowers you to manage your database with precision.
+
+CRUD Operations in MongoDB
+MongoDB – Create Database
+MongoDB – Drop Database
+MongoDB – Create Collection
+MongoDB – Drop Collection
+Create Database using MongoDB Compass
+Create Database using MongoShell
+Insert Operations
+MongoDB Insert() Methods
+MongoDB InsertOne() Methods
+MongoDB InsertMany() Methods
+Update Operations
+MongoDB Update() Methods
+MongoDB UpdateOne() Methods
+MongoDB UpdateMany() Methods
+MongoDB replaceone() Methods
+Delete Operations
+Delete Single Document Using MongoShell
+Delete Multiple Document Using MongoShell
+Delete Database using MongoShell
+MongoDB deleteone() Method
+Query Operations
+Query on Embedded/Nested Documents
+Query an Array
+Query for Null or Missing Fields
+MongoDB Find() Method
+MongoDB FindOne() Method
+MongoDB FindAndModify() Method
+MongoDB FindOneAndDelete() Method
+MongoDB FindOneAndUpdate() Method
+MongoDB FindOneAndReplace() Method
+Query and Projection Operators
+Section 6: MongoDB Operators
+MongoDB operators are like magic wands for your data! Throug this section we will let you into these operators that let you filter, sort, and transform your documents with ease. Grasp these tools to craft powerful queries, unleashing the true potential of your MongoDB database.
+
+Comparison Operators
+MongoDB – Comparison Query Operators
+MongoDB $cmp Operator
+MongoDB – Greater than Operator $gt
+MongoDB – Less than Operator $lt
+MongoDB – Equality Operator $eq
+Logical Operators
+MongoDB – Logical Query Operators
+MongoDB AND operator ( $and )
+MongoDB OR operator ( $or )
+MongoDB NOT operator ( $not )
+MongoDB NOR operator ( $nor )
+Arithmetic Operators
+MongoDB $add Operator
+MongoDB $subtract Operator
+MongoDB $multiply Operator
+MongoDB $divide Operator
+MongoDB $abs Operator
+MongoDB $floor Operator
+Field Update Operators
+MongoDB – Field Update Operators
+MongoDB – Maximum operator ( $max )
+MongoDB – Minimum operator ( $min )
+MongoDB – Increment Operator ( $inc )
+MongoDB – Multiply Operator ($mul)
+MongoDB – Rename Operator ($rename)
+Array Expression Operators
+MongoDB $isArray Operator
+MongoDB $size Operator
+MongoDB $arrayElemAt Operator
+MongoDB $concatArrays Operator
+MongoDB $reverseArray Operator
+Array Update Operators
+MongoDB – $pull Operator
+MongoDB – $pop Operator
+MongoDB – $pullAll Operator
+MongoDB – $push Operator
+MongoDB – Positional Operator ($)
+MongoDB – All Positional Operator ($[])
+String Expression Operators
+MongoDB $concat Operator
+MongoDB $strcasecmp Operator
+MongoDB $toUpper Operator
+MongoDB $toLower Operator
+$substrCP (aggregation) operator in MongoDB
+Section 7: Aggregation
+Supercharge your data analysis with MongoDB Aggregation! This section delves into crafting powerful pipelines that transform and summarize your collections. Learn to group documents, calculate values, and uncover hidden insights within your MongoDB data.
+
+MongoDB Aggregation
+Updates with Aggregation Pipeline
+Aggregation Pipeline Stages
+Aggregation Pipeline Optimization
+Aggregation Pipeline Limits
+Aggregation Commands
+MongoDB Aggregation $out
+mongodb aggregation $count
+MongoDB Aggregation $group
+mongodb aggregation $lookup
+mongodb aggregation $first
+Map-Reduce
+Section 8: Indexing
+This section delves into creating and leveraging indexes, specialized data structures that significantly improve retrieval efficiency. Learn how to identify ideal fields for indexing and optimize your database performance for faster results.
+
+Create an Index
+Get an Index
+Drop an Index
+Index Types
+Single Field Indexes
+Compound Indexes
+Multikey Indexes
+Text Indexes
+Section 9: Transactions and Data Modeling
+MongoDB offers flexibility with its document model, but transactions come into play for ensuring data consistency across multiple updates. This section clarifies when to leverage MongoDB’s atomic writes on single documents and dives into multi-document transactions for complex operations. We’ll guide you on optimizing your data model for both efficiency and data integrity.
+
+Transactions in MongoDB
+ACID Transactions in MongoDB
+Transactions in Mongoose
+Data Modeling
+MongoDB – Relationships
+Embedding Data in Documents
+Specify JSON Schema Validation
+Scaling in MongoDB
+Section 10: Replication and Sharding
+This section delves into replication and sharding, two techniques for boosting performance and ensuring data availability. Learn how to create fault-tolerant backups and distribute data across multiple servers for a scalable and resilient MongoDB deployment.
+
+MongoDB Replication
+MongoDB Sharding
+Change Streams
+Replica Set Members
+Replica Set Deployment
+Sharded Cluster Components
+Shard Keys
+Hashed Sharding
+Ranged Sharding
+Replica Set Read and Write Semantics
+Sharding Deployment Architectures
+Section 11: Security
+This section tackles the essential security measures to safeguard your database. We’ll delve into access control, encryption strategies, and auditing practices to fortify your MongoDB environment and ensure data confidentiality. Follow these best practices to build a robust security posture for your MongoDB deployments.
+
+How to Secure the MongoDB Database
+How to Enable Access Control & Authentication in MongoDB
+How to Enable Authentication on MongoDB
+Configure Role-Based Access Control in MongoDB
+MongoDB Applications and Projects
+Dive into the exciting world of what you can build with MongoDB! We’ll showcase real-world applications that leverage MongoDB’s flexibility and explore project ideas to ignite your development journey. Get inspired to create scalable and dynamic applications with MongoDB!
+
+Nodejs – Connect MongoDB with Node app using MongooseJS
+Signup Form Using Nodejs and MongoDB
+Login form using Node.js and MongoDB
+Connect Django Project to MongoDB using Django
+Features of MongoDB
+There are five main features of MongoDB – 
+
+MongoDB is a Flexible database with Ad-hoc query support.
+MongoDB offers a broad range of Indices, which can be created on demand.
+MongoDB provides replica sets that provide disaster recovery and it also helps with load balancing.
+Sharding in MongoDB allows for better horizontal scalability by splitting large datasets across multiple distributed collections.
+MongoDB supports large-scale load balancing through horizontal scaling features like replication and sharding.
