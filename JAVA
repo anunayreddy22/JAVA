@@ -11,10 +11,10 @@ This File Contains
     Variables
     Input/Output
     Constructors, this reference
-    Flow Control
     Access Modifiers
     Memory Allocation
     Packages in java
+    Flow Control
     Wrapper Class
     OOPS
     Arrays
@@ -877,8 +877,382 @@ the Standard Output Stream.
 
 
 
+Constructors
+
+	
+In Java, a Constructor is a block of codes similar to the method. It is called when an instance of the class is created. At the time of 
+calling the constructor, memory for the object is allocated in the memory. It is a special type of method that is used to initialize the object. 
+Every time an object is created using the new() keyword, at least one constructor is called.
+
+// Java Program to demonstrate
+// Constructor
+import java.io.*;
+
+// Driver Class
+class Geeks {
+  
+    // Constructor
+    Geeks()
+    {
+        
+        System.out.println("Constructor Called");
+    }
+
+    // main function
+    public static void main(String[] args)
+    {
+        Geeks geek = new Geeks();
+    }
+}
+
+
+When Java Constructor is called?
+	
+Each time an object is created using a new() keyword, at least one constructor (it could be the default constructor) is invoked to assign initial 
+values to the data members of the same class. Rules for writing constructors are as follows:
+
+The constructor(s) of a class must have the same name as the class name in which it resides.
+A constructor in Java can not be abstract, final, static, or Synchronized.
+Access modifiers can be used in constructor declaration to control its access i.e which other class can call the constructor.
+
+
+Types of Constructors in Java
+
+Default Constructor in Java
+	
+A constructor that has no parameters is known as default the constructor. A default constructor is invisible. And if we write a constructor
+with no arguments, the compiler does not create a default constructor. It is taken out. It is being overloaded and called a 
+parameterized constructor. The default constructor changed into the parameterized constructor. But Parameterized constructor can’t change the 
+default constructor. The default constructor can be implicit or explicit. If we don’t define explicitly, we get an implicit default constructor. 
+If we manually write a constructor, the implicit one is overridded.
+
+// Java Program to demonstrate
+// Default Constructor
+import java.io.*;
+
+// Driver class
+class GFG {
+
+    // Default Constructor
+    GFG() { System.out.println("Default constructor"); }
+
+    // Driver function
+    public static void main(String[] args)
+    {
+        GFG hello = new GFG();
+    }
+}
+
+
+Parameterized Constructor in Java
+	
+A constructor that has parameters is known as parameterized constructor. If we want to initialize fields of the class with our own values, then 
+use a parameterized constructor.
+
+
+// Java Program for Parameterized Constructor
+import java.io.*;
+class Geek {
+    // data members of the class.
+    String name;
+    int id;
+    Geek(String name, int id)
+    {
+        this.name = name;
+        this.id = id;
+    }
+}
+class GFG {
+    public static void main(String[] args)
+    {
+        // This would invoke the parameterized constructor.
+        Geek geek1 = new Geek("Avinash", 68);
+        System.out.println("GeekName :" + geek1.name
+                           + " and GeekId :" + geek1.id);
+    }
+}
+
+
+	
+Copy Constructor in Java
+	
+Unlike other constructors copy constructor is passed with another object which copies the data available from the passed object to the newly
+created object.
+
+Note: In Java,there is no such inbuilt copy constructor available like in other programming languages such as C++, instead we can create our 
+own copy constructor by passing the object of the same class to the other instance(object) of the class.
+
+
+	
+// Java Program for Copy Constructor
+import java.io.*;
+
+class Geek {
+    // data members of the class.
+    String name;
+    int id;
+
+    // Parameterized Constructor
+    Geek(String name, int id)
+    {
+        this.name = name;
+        this.id = id;
+    }
+
+    // Copy Constructor
+    Geek(Geek obj2)
+    {
+        this.name = obj2.name;
+        this.id = obj2.id;
+    }
+}
+class GFG {
+    public static void main(String[] args)
+    {
+        // This would invoke the parameterized constructor.
+        System.out.println("First Object");
+        Geek geek1 = new Geek("Avinash", 68);
+        System.out.println("GeekName :" + geek1.name
+                           + " and GeekId :" + geek1.id);
+
+        System.out.println();
+
+        // This would invoke the copy constructor.
+        Geek geek2 = new Geek(geek1);
+        System.out.println(
+            "Copy Constructor used Second Object");
+        System.out.println("GeekName :" + geek2.name
+                           + " and GeekId :" + geek2.id);
+    }
+}
+
+
+
+this reference
+
+
+‘this’ is a reference variable that refers to the current object, or can be said “this” in Java is a keyword that refers to the current object 
+instance. It can be used to call current class methods and fields, to pass an instance of the current class as a parameter, and to differentiate 
+between the local and instance variables. Using “this” reference can improve code readability and reduce naming conflicts.
+
+
+
+// Java Program to implement
+// Java this reference
+
+// Driver Class
+public class Person {
+
+	// Fields Declared
+	String name;
+	int age;
+
+	// Constructor
+	Person(String name, int age)
+	{
+		this.name = name;
+		this.age = age;
+	}
+
+	// Getter for name
+	public String get_name() { return name; }
+
+	// Setter for name
+	public void change_name(String name)
+	{
+		this.name = name;
+	}
+
+	// Method to Print the Details of
+	// the person
+	public void printDetails()
+	{
+		System.out.println("Name: " + this.name);
+		System.out.println("Age: " + this.age);
+		System.out.println();
+	}
+
+	// main function
+	public static void main(String[] args)
+	{
+		// Objects Declared
+		Person first = new Person("ABC", 18);
+		Person second = new Person("XYZ", 22);
+
+		first.printDetails();
+		second.printDetails();
+
+		first.change_name("PQR");
+		System.out.println("Name has been changed to: "
+						+ first.get_name());
+	}
+}
+
+Output:
+
+Name: ABC
+Age: 18
+
+Name: XYZ
+Age: 22
+
+Name has been changed to: PQR
 
 
 
 
+Access Modifiers
+
+	
+Modifier 1: Public Access Modifiers
+
+	
+If a class is declared as public then we can access that class from anywhere.
+
+In the below example we are creating a package pack1 inside that package we declare a class A which is public and inside that class, 
+we declare a method m1 which is also public. Now we create another package pack2 and inside that pack2 we import pack1 and declare a class B and
+in class B’s main method we create an object of type class A and trying to access the data of method m1
+
+// Java program to showcase the example
+// of public access modifier
+
+// creating a package
+package pack1;
+
+// import required packages
+import java.io.*;
+import java.util.*;
+
+// declaring a public class
+public class A {
+	
+	// declaring method m1
+	public void m1() { System.out.println("GFG"); }
+}
+
+
+
+// creating a package
+package pack2;
+
+// import required packages
+import java.io.*;
+import java.util.*;
+
+// importing package pack1
+import pack1.A;
+
+// driver class
+class B {
+	
+	// main method
+	public static void main(String[] args)
+	{
+		// creating an object of type class A
+		A a = new A();
+		
+		// accessing the method m1()
+		a.m1();
+	}
+}
+
+
+Modifier 2: Protected Access Modifier
+
+
+This modifier can be applied to the data member, method, and constructor, but this modifier can’t be applied to the top-level classes and interface.
+
+A member is declared as protected as we can access that member within the current package and only in the child class of the outside package
+
+
+// Java program to showcase the example
+// of protected access modifier
+// import required packages
+import java.io.*;
+import java.util.*;
+
+// declaring a parent class A
+class A {
+	
+	// declaring a protected method m1()
+	protected void m1() { System.out.println("GFG"); }
+}
+
+// creating a child class by extending the class A
+class B extends A {
+	
+	// main method
+	public static void main(String[] args)
+	{
+		// creating an object of parent class
+		// using parent reference
+		A a = new A();
+		
+		/// calling method m1
+		a.m1();
+		
+		// creating an object of child class
+		// using child reference
+		B b = new B();
+		
+		// calling method m1
+		b.m1();
+		
+		// creating an object of child class
+		// using parent reference
+		A a1 = new B();
+		
+		// calling m1 method
+		a1.m1();
+	}
+}
+
+
+
+Private Access Modifiers
+
+	
+This modifier is not applicable for top-level classes or interfaces. It is only applicable to constructors, methods, and fields inside the classes.  
+
+If a variable or methods or constructor is declared as private then we can access them only from within the class i.e from outside
+the class we can’t access them
+
+
+// Java program to showcase the example
+// of private access modifier
+
+// import required packages
+import java.io.*;
+
+import java.util.*;
+
+// helper class
+class A {
+	
+	// helper method
+	private void m1() { System.out.println("GFG"); }
+}
+
+// driver class
+class B {
+	
+	// main method
+	public static void main(String[] args)
+	{
+		// creating an object of type class A
+		A a = new A();
+		
+		// accessing the method m1()
+		a.m1();
+	}
+}
+
+
+
+
+
+
+
+
+	
 
