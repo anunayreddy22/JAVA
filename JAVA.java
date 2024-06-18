@@ -1,32 +1,32 @@
 This File Contains
 
-    1. Java Terminology
-    2. Features of Java
-    3. JDK,JVM,JRE
-    4. Java Basic Syntax
-    5. Hello World Program
-    6. Data Types
-    7. indentifiers
-    8. Operators
-    9. Variables
-    10. Wrapper Class
-    11. Input/Output
-    12. Flow Control
-    14.Constructors, this reference
-    15. Access Modifiers
-    16. Memory Allocation
-    17. Packages in java
-    13. OOPS
-    14. Arrays
-    15. Strings
-    16. Exception Handling
-    17. Multi Threading
-    18. Synchronization
-    19. Serialization
-    20. File Handling
-    21. Java IO
-    22. Java Networking
-    23. JDBC
+    Java Terminology
+    Features of Java
+    JDK,JVM,JRE
+    Java Basic Syntax
+    Hello World Program
+    Data Types
+    Indentifiers
+    Operators
+    Variables
+    Input/Output
+    Constructors, this reference
+    Flow Control
+    Access Modifiers
+    Memory Allocation
+    Packages in java
+    Wrapper Class
+    OOPS
+    Arrays
+    Strings
+    Exception Handling
+    Multi Threading
+    Synchronization
+    Serialization
+    File Handling
+    Java IO
+    Java Networking
+    JDBC
 
                                                           JAVA
                                                     
@@ -527,7 +527,7 @@ class GFG {
 These operators are used to shift the bits of a number left or right, thereby multiplying or dividing the number by two, respectively. 
 They can be used when we have to multiply or divide a number by two. General format- 
 
-                     number shift_op number_of_places_to_shift;
+                     number  shift_op  number_of_places_to_shift;
 
 <<, Left shift operator: shifts the bits of the number to the left and fills 0 on voids left as a result. Similar effect as multiplying the number with some power of two.
 >>, Signed Right shift operator: shifts the bits of the number to the right and fills 0 on voids left as a result. The leftmost bit depends on the sign of the initial number. 
@@ -537,6 +537,191 @@ They can be used when we have to multiply or divide a number by two. General for
 Variables
 
 
+In Java, Variables are the data containers that save the data values during Java program execution. Every Variable in Java is assigned a 
+data type that designates the type and quantity of value it can hold. A variable is a memory location name for the data.
+
+
+Java variable is a name given to a memory location. It is the basic unit of storage in a program.
+The value stored in a variable can be changed during program execution.
+Variables in Java are only a name given to a memory location. All the operations done on the variable affect that memory location.
+In Java, all variables must be declared before use.
+
+
+                                   int count; // declaring a variable
+                                   count = 10; // initializing a variable   
+                                   we can write directly   int count = 10; which is easy and better option
+
+
+Types of Variables
+
+
+1. Local Variables
+
+A variable defined within a block or method or constructor is called a local variable. 
+
+These variables are created when the block is entered, or the function is called and destroyed after exiting from the block or when the call 
+returns from the function. The scope of these variables exists only within the block in which the variables are declared, i.e., we can access 
+these variables only within that block. Initialization of the local variable is mandatory before using it in the defined scope.
+
+ // Java Program to implement
+// Local Variables
+import java.io.*;
+
+class Java {
+	public static void main(String[] args)
+	{
+		// Declared a Local Variable
+		int var = 10;
+
+		// This variable is local to this main method only
+		System.out.println("Local Variable: " + var);   // Output Local Variable: 10
+	}
+}
+
+
+2. Instance Variables
+    
+Instance variables are non-static variables and are declared in a class outside of any method, constructor, or block. 
+
+As instance variables are declared in a class, these variables are created when an object of the class is created and destroyed when the 
+object is destroyed. Unlike local variables, we may use access specifiers for instance variables. If we do not specify any access specifier, 
+then the default access specifier will be used. Initialization of an instance variable is not mandatory. Its default value is dependent on the
+data type of variable. For String it is null, for float it is 0.0f, for int it is 0, for Wrapper classes like Integer it is null, etc.
+Instance variables can be accessed only by creating objects. We initialize instance variables using constructors while creating an object.
+We can also use instance blocks to initialize the instance variables.
+
+
+// Java Program to demonstrate
+// Instance Variables
+import java.io.*;
+
+class Java {
+
+	// Declared Instance Variable
+	public String geek;
+	public int i;
+	public Integer I;
+	public Java()
+	{
+		// Default Constructor
+		// initializing Instance Variable
+		this.geek = "Shubham Jain";
+	}
+
+	// Main Method
+	public static void main(String[] args)
+	{
+		// Object Creation
+		Java name = new Java();
+
+		// Displaying O/P
+		System.out.println("Geek name is: " + name.geek);
+		System.out.println("Default value for int is "
+						+ name.i);
+	
+		// toString() called internally
+		System.out.println("Default value for Integer is "
+						+ name.I);
+	}
+}
+
+
+// Just take a glance we will learn in depth of what is a constructor and this. reference  soon
+
+
+
+Static Variables
+    
+Static variables are also known as class variables. 
+
+These variables are declared similarly to instance variables. The difference is that static variables are declared using the static keyword within
+a class outside of any method, constructor, or block. Unlike instance variables, we can only have one copy of a static variable per class, 
+irrespective of how many objects we create. Static variables are created at the start of program execution and destroyed automatically when
+execution ends. Initialization of a static variable is not mandatory. Its default value is dependent on the data type of variable.
+For String it is null, for float it is 0.0f, for int it is 0, for Wrapper classes like Integer it is null, etc.
+
+
+// Java Program to demonstrate
+// Static variables
+import java.io.*;
+
+class GFG {
+	// Declared static variable
+	public static String geek = "Shubham Jain";
+
+	public static void main(String[] args)
+	{
+
+		// geek variable can be accessed without object
+		// creation Displaying O/P GFG.geek --> using the
+		// static variable
+		System.out.println("Geek Name is : " + GFG.geek);
+
+		// static int c=0;
+		// above line,when uncommented,
+		// will throw an error as static variables cannot be
+		// declared locally.
+	}
+}
+
+Scope of a Variable 
+
+    
+Member Variables (Class Level Scope)
+
+These variables must be declared inside class (outside any function). They can be directly accessed anywhere in class. 
+
+public class Test
+{
+    // All variables defined directly inside a class 
+    // are member variables
+    int a;
+    private String b;
+    void method1() {....}
+    int method2() {....}
+    char c;
+}
+
+Local Variables (Method Level Scope)
+
+
+Variables declared inside a method have method level scope and can’t be accessed outside the method. 
+Local variables don’t exist after method’s execution is over. 
+
+
+public class Test
+{
+    void method1() 
+    {
+       // Local variable (Method level scope)
+       int x;
+    }
+}
+
+
+Loop Variables (Block Scope) 
+
+
+A variable declared inside pair of brackets “{” and “}” in a method has scope within the brackets only.
+
+    
+public class Test
+{
+    public static void main(String args[])
+    {
+        {
+            // The variable x has scope within
+            // brackets
+            int x = 10;
+            System.out.println(x);
+        }
+        
+        // Uncommenting below line would produce
+        // error since variable x is out of scope.
+
+        // System.out.println(x); 
+    }
+}
 
 
 
@@ -547,21 +732,6 @@ Variables
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-All classes have at least one constructor. If a class does not explicitly declare any, the Java compiler automatically provides a no-argument 
-constructor, also called the default constructor. This default constructor calls the class parent’s no-argument constructoror the Object class 
-constructor if the class has no other parent (as the Object class is the parent of all classes either directly or indirectly). 
 
 
 
