@@ -724,8 +724,155 @@ public class Test
 }
 
 
+INPUT / OUTPUT
+
+How to Take Input From User in Java?
+	
+Java brings various Streams with its I/O package that helps the user perform all the Java input-output operations. These streams support 
+all types of objects, data types, characters, files, etc. to fully execute the I/O operations. Input in Java can be with certain methods 
+mentioned below in the article.
+
+Methods to Take Input in Java
+	
+There are two ways by which we can take Java input from the user or from a file
+
+BufferedReader Class
+Scanner Class
 
 
+1. Using BufferedReader Class for String Input In Java
+	
+It is a simple class that is used to read a sequence of characters. It has a simple function read that reads a character, another read 
+which reads an array of characters, and a readLine() function which reads a line.
+
+InputStreamReader() is a function that converts the input stream of bytes into a stream of characters so that it can be read as 
+BufferedReader expects a stream of characters. BufferedReader can throw checked Exceptions.
+
+// Java Program for taking user
+// input using BufferedReader Class
+import java.io.*;
+
+class GFG {
+
+    // Main Method
+    public static void main(String[] args)
+        throws IOException
+    {
+        // Creating BufferedReader Object
+        // InputStreamReader converts bytes to
+        // stream of character
+        BufferedReader bfn = new BufferedReader(
+            new InputStreamReader(System.in));
+
+        // String reading internally
+        String str = bfn.readLine();
+
+        // Integer reading internally
+        int it = Integer.parseInt(bfn.readLine());
+
+        // Printing String
+        System.out.println("Entered String : " + str);
+
+        // Printing Integer
+        System.out.println("Entered Integer : " + it);
+    }
+}
+
+
+//We use Scanner class method only everywhere
+Using Scanner Class for Taking Input in Java
+
+	
+It is an advanced version of BufferedReader which was added in later versions of Java. The scanner can read formatted input. 
+It has different functions for different types of data types. The scanner is much easier to read as we don’t have to write throws as 
+there is no exception thrown by it. It contains predefined functions to read an Integer, Character, and other data types as well.
+
+	
+Syntax of Scanner class
+	
+Scanner scn = new Scanner(System.in);   --> Important
+
+
+Importing Scanner Class
+	
+‘To use the Scanner we need to import the Scanner class from the util package as
+
+
+
+
+	
+import java.util.Scanner;  
+
+// Java Program to show how to take
+// input from user using Scanner Class
+
+import java.util.*;
+
+class GFG {
+
+    public static void main(String[] args)
+    {
+        // Scanner definition
+        Scanner scn = new Scanner(System.in);
+
+        // input is a string ( one word )
+        // read by next() function
+        String str1 = scn.next();
+
+        // print String
+        System.out.println("Entered String str1 : " + str1);
+
+        // input is a String ( complete Sentence )
+        // read by nextLine()function
+        String str2 = scn.nextLine();
+
+        // print string
+        System.out.println("Entered String str2 : " + str2);
+
+        // input is an Integer
+        // read by nextInt() function
+        int x = scn.nextInt();
+
+        // print integer
+        System.out.println("Entered Integer : " + x);
+
+        // input is a floatingValue
+        // read by nextFloat() function
+        float f = scn.nextFloat();
+
+        // print floating value
+        System.out.println("Entered FloatValue : " + f);
+    }
+}
+
+
+
+nextBoolean()                       Used for reading Boolean value                    
+nextByte()                          Used for reading Byte value
+nextDouble()                        Used for reading Double value
+nextFloat()                         Used for reading Float value
+nextInt()                           Used for reading Int value
+nextLine()                          Used for reading Line value
+nextLong()                          Used for reading Long value
+nextShort()                         Used for reading Short value
+	
+
+Scanner in = new Scanner(System.in);
+String s = in.nextLine();
+
+
+
+Parts of System.out.println()
+	
+The statement can be broken into 3 parts which can be understood separately:
+
+System: It is a final class defined in the java.lang package.
+	
+out: This is an instance of PrintStream type, which is a public and static member field of the System class.
+	
+println(): As all instances of the PrintStream class have a public method println(), we can invoke the same on out as well. This is an upgraded 
+version of print(). It prints any argument passed to it and adds a new line to the output. We can assume that System.out represents 
+the Standard Output Stream.
 
 
 
