@@ -42,6 +42,130 @@
 
 
 
+Checking if the number is even or odd without using the % operator: 
+Although this trick is not much better than using a % operator but is sometimes efficient (with large numbers). 
+
+Use & operator:
+
+System.out.println((a & 1) == 0 ?  "EVEN" : "ODD" );
+Example: 
+
+num = 5 
+Binary: "101 & 1" will be 001, so false 
+
+num = 4 
+Binary: "100 & 1" will be 000, so true.
+
+
+
+
+Fast Multiplication or Division by 2 
+
+Multiplying by 2 means shifting all the bits to left and dividing by 2 means shifting to the right.
+
+Example: 2 (Binary 10): shifting left 4 (Binary 100) and right 1 (Binary 1)
+
+n = n << 1;   // Multiply n with 2
+n = n >> 1;   // Divide n by 2
+
+
+
+
+Swapping of 2 numbers using XOR: 
+
+This method is fast and doesn’t require the use of the 3rd variable.
+
+  // A quick way to swap a and b
+  a ^= b;
+  b ^= a;
+  a ^= b;
+
+
+
+
+Calculating the most significant digit: 
+
+To calculate the most significant digit of any number log can be directly used to calculate it. 
+
+Suppose the number is N then 
+Let double K = Math.log10(N);
+now K = K - Math.floor(K);
+int X = (int)Math.pow(10, K);
+X will be the most significant digit. 
+
+
+
+
+Calculating the number of digits directly:
+
+To calculate the number of digits in a number, instead of looping we can efficiently use log : 
+
+No. of digits in N = Math.floor(Math.log10(N)) + 1;
+
+
+
+
+
+Java has inbuilt GCD method in BigInteger class. It returns a BigInteger whose value is the greatest common divisor of abs(this) and abs(val).
+Returns 0 if this==0 && val==0. 
+
+Syntax : 
+
+public BigInteger gcd(BigInteger val)
+Parameters :
+val - value with which the GCD is to be computed.
+Returns :
+GCD(abs(this), abs(val))
+
+
+// Java program to demonstrate how 
+// to use gcd method of BigInteger class 
+
+import java.math.BigInteger; 
+
+class Test { 
+	public static int gcd(int a, int b) 
+	{ 
+		BigInteger b1 = BigInteger.valueOf(a); 
+		BigInteger b2 = BigInteger.valueOf(b); 
+		BigInteger gcd = b1.gcd(b2); 
+		return gcd.intValue(); 
+	} 
+
+	public static long gcd(long a, long b) 
+	{ 
+		BigInteger b1 = BigInteger.valueOf(a); 
+		BigInteger b2 = BigInteger.valueOf(b); 
+		BigInteger gcd = b1.gcd(b2); 
+		return gcd.longValue(); 
+	} 
+
+	// Driver method 
+	public static void main(String[] args) 
+	{ 
+		System.out.println(gcd(3, 5)); 
+		System.out.println(gcd(10000000000L, 600000000L)); 
+	} 
+}
+
+
+
+
+
+Efficient trick to know if a number is a power of 2:
+
+The normal technique of division the complexity comes out to be O(logN), but it can be solved using O(v) where v is the number of digits of the number in binary form.  
+
+/* Method to check if x is power of 2*/
+static boolean isPowerOfTwo (int x) 
+{ 
+     /* First x in the below expression is  
+     for the case when x is 0 */
+      return x!=0 && ((x&(x-1)) == 0);     
+} 
+
+
+
 1. Dynamic Programming:
 Dynamic programming is a method for solving complex problems by breaking them down into simpler subproblems and solving each subproblem only once, storing the results to avoid redundant computations.
 Applications:
