@@ -13,7 +13,6 @@ This File Contains
     Constructors, this reference
     Access Modifiers
     Memory Allocation
-    Packages in java
     Flow Control
     Wrapper Class
     OOPS
@@ -1247,12 +1246,333 @@ class B {
 	}
 }
 
+Memory Management
+
+
+In every programming language, the memory is a vital resource and is also scarce in nature. Hence it’s essential that the memory is managed 
+thoroughly without any leaks. Allocation and deallocation of memory is a critical task and requires a lot of care and consideration.
+However in Java, unlike other programming language, the JVM and to be specific Garbage Collector has the role of managing memory allocation so 
+that the programmer needs not to. Whereas in other programming languages such as C the programmer has direct access to the memory who allocates
+memory in his code, thereby creating a lot of scope for leaks.
 
 
 
+In Java, all objects are dynamically allocated on Heap. This is different from C++ where objects can be allocated memory either on Stack or on Heap.
+In JAVA , when we allocate the object using new(), the object is allocated on Heap, otherwise on Stack if not global or static.
+In Java, when we only declare a variable of a class type, only a reference is created (memory is not allocated for the object).
+To allocate memory to an object, we must use new(). So the object is always allocated memory on the heap.
 
 
 
+There are two ways to create an object  of string in java:
+
+By string literal    String x = "Anunay"   String y = "Anunay"  in Memory only once Anunay is created and both x and y refernces that only.
+By new keyword    String x = new String("Anunay")  String x = new String("Anunay") if we create like this in the pool two times Anunay is created.
+
+
+Stack vs Heap Memory Allocation
+
+
+Stack Allocation: The allocation happens on contiguous blocks of memory. We call it a stack memory allocation because the allocation happens in the 
+function call stack. The size of memory to be allocated is known to the compiler and whenever a function is called, its variables get memory
+allocated on the stack. And whenever the function call is over, the memory for the variables is de-allocated. This all happens using some 
+predefined routines in the compiler. A programmer does not have to worry about memory allocation and de-allocation of stack variables. 
+This kind of memory allocation is also known as Temporary memory allocation because as soon as the method finishes its execution all the 
+data belonging to that method flushes out from the stack automatically. 
+
+
+Heap Allocation: The memory is allocated during the execution of instructions written by programmers. Note that the name heap has nothing to do 
+with the heap data structure. It is called a heap because it is a pile of memory space available to programmers to allocate and de-allocate.
+Every time when we made an object it always creates in Heap-space and the referencing information to these objects is always stored in 
+Stack-memory. Heap memory allocation isn’t as safe as Stack memory allocation because the data stored in this space is accessible or visible 
+to all threads. If a programmer does not handle this memory well, a memory leak can happen in the program.
 
 	
+Flow Control
+
+
+if: if statement is the most simple decision-making statement. It is used to decide whether a certain statement or block of statements 
+will be executed or not i.e if a certain condition is true then a block of statements is executed otherwise not. 
+
+Syntax: 
+
+if(condition) 
+{
+   // Statements to execute if
+   // condition is true
+}
+
+
+
+if-else: The if statement alone tells us that if a condition is true it will execute a block of statements and if the condition is false it won’t. 
+But what if we want to do something else if the condition is false? Here comes the else statement. We can use the else statement with the if 
+statement to execute a block of code when the condition is false. 
+
+Syntax: 
+
+if (condition)
+{
+    // Executes this block if
+    // condition is true
+}
+else
+{
+    // Executes this block if
+    // condition is false
+}
+
+
+
+switch-case: The switch statement is a multiway branch statement. It provides an easy way to dispatch execution to different parts of code based 
+on the value of the expression. 
+
+Syntax: 
+
+switch (expression)
+{
+  case value1:
+    statement1;
+    break;
+  case value2:
+    statement2;
+    break;
+  .
+  .
+  case valueN:
+    statementN;
+    break;
+  default:
+    statementDefault;
+}
+
+Break: In Java, a break is majorly used for: 
+Terminate a sequence in a switch statement (discussed above).
+To exit a loop.
+
+
+
+
+Continue: Sometimes it is useful to force an early iteration of a loop. That is, you might want to continue running the loop but stop processing 
+the remainder of the code in its body for this particular iteration. This is, in effect, a goto just past the body of the loop, to the loop’s end.
+The continue statement performs such an action.
+
+// Java program to illustrate using
+// continue in an if statement
+import java.util.*;
+
+class ContinueDemo {
+	public static void main(String args[])
+	{
+		for (int i = 0; i < 10; i++) {
+			// If the number is even
+			// skip and continue
+			if (i % 2 == 0)
+				continue;
+
+			// If number is odd, print it
+			System.out.print(i + " ");
+		}
+	}
+}
+
+
+A while loop is a control flow statement that allows code to be executed repeatedly based on a given Boolean condition. The while loop can be 
+thought of as a repeating if statement. 
+
+Syntax :
+
+while (boolean condition)
+{
+   loop statements...
+}
+
+import java.io.*;
+
+class Hello {
+	public static void main (String[] args) {
+	int i=0;
+	while (i<=10)
+	{
+		System.out.println(i);
+		i++;
+	}
+	}
+}
+
+
+
+
+
+
+for loop: for loop provides a concise way of writing the loop structure. Unlike a while loop, a for statement consumes the initialization, 
+condition and increment/decrement in one line thereby providing a shorter, easy to debug structure of looping. 
+
+
+import java.io.*;
+
+class Hello {
+	public static void main (String[] args) {
+	for (int i=0;i<=10;i++)
+	{
+		System.out.println(i);
+	}
+	}
+}
+
+
+
+for-each 
+
+
+It starts with the keyword for like a normal for-loop.
+Instead of declaring and initializing a loop counter variable, you declare a variable that is the same type as the base type of the array,
+followed by a colon, which is then followed by the array name.
+In the loop body, you can use the loop variable you created rather than using an indexed array element. 
+ 
+It’s commonly used to iterate over an array or a Collections class (eg, ArrayList)
+
+import java.io.*; 
+
+class Easy 
+
+{ 
+
+	public static void main(String[] args) 
+
+	{ 
+
+		// array declaration 
+
+		int ar[] = { 10, 50, 60, 80, 90 }; 
+
+		for (int element : ar) 
+
+			System.out.print(element + " "); 
+	} 
+}
+
+
+Wrapper Class
+
+
+Firstly the question that hits the programmers is when we have primitive data types then why does there arise a need for the concept of wrapper 
+classes in java. It is because of the additional features being there in the Wrapper class over the primitive data types when it comes to usage. 
+These methods include primarily methods like valueOf(), parseInt(), toString(), and many more.
+
+A wrapper class wraps (encloses) around a data type and gives it an object appearance. Wrapper classes are final and immutable. Two concepts are 
+there in the wrapper classes namely autoboxing and unboxing. 
+
+
+
+AutoBoxing
+
+procedure of converting a primitive value into an object of the corresponding wrapper class. For example, converting int to Integer class. 
+The Java compiler applies autoboxing when a primitive value is:Passed as a parameter to a method that expects an object of the corresponding 
+wrapper class.Assigned to a variable of the corresponding wrapper class.
+
+
+import java .util.*;
+class home {
+
+	public static void main(String args[]) {
+		int x = 5;
+		float y = 3.14f;
+		long z=6000;
+
+		// autoboxing
+		Integer intobj = x;
+		Float floatobj=y;
+		Long longobj=z;
+		// print 
+		System.out.println(intobj);
+		System.out.println(floatobj);
+		System.out.println(longobj);
+	}
+}
+
+
+Unboxing
+
+Unboxing is a procedure of converting an object of a wrapper type to its corresponding primitive value. For example conversion of Integer to int. 
+The Java compiler applies to unbox when an object of a wrapper class is:Passed as a parameter to a method that expects a value of the
+corresponding primitive type. Assigned to a variable of the corresponding primitive type.
+
+
+
+
+Intialization of a Wrapper Class
+
+Integer number = new Integer(5);  or  Integer number = Integer.valueOf(5);
+
+Character class->  Character ch = new Character('a');
+
+Methods in Character class                                                          Methods in Integer Class
+
+toString(char ch)                                                                                    toString()
+Character.isLetter                                                                    valueOf() : returns the Integer object
+Character.isDigit('0')
+Character.isWhitespace                                                            parseInt() : returns int value by parsing the string
+isUpperCase
+Character.isLowerCase                                                     compareTo() : Used to compare two Integer objects for numerical equality.
+toUpperCase       
+
+
+
+OOPS
+
+Object Oriented Programing
+
+
+Class
+
+A class is a user-defined blueprint or prototype from which objects are created. It represents the set of properties or methods that are common
+to all objects of one type. Using classes, you can create multiple objects with the same behavior instead of writing their code multiple times.
+This includes classes for objects occurring more than once in your code. In general, class declarations can include these components in order: 
+
+
+Object
+
+An object is a basic unit of Object-Oriented Programming that represents real-life entities. A typical Java program creates many objects, 
+which as you know, interact by invoking methods. The objects are what perform your code, they are the part of your code visible to the viewer/user.
+
+
+
+public class Java {
+    
+    static String Employee_name;
+    static float Employee_salary;
+
+    static void set(String n, float p) {
+        Employee_name  = n;
+        Employee_salary  = p;
+    }
+
+    static void get() {
+        System.out.println("Employee name is: " +Employee_name );
+        System.out.println("Employee CTC is: " + Employee_salary);
+    }
+
+    public static void main(String args[]) {
+        Java.set("Anunay Reddy", 100000.0f);
+        Java.get();
+    }
+}
+
+
+static keyword
+
+When we declare a class as static, then it can be used without the use of an object in Java. If we are using static 
+function or static variable then we can’t call that function or variable by using dot(.) or class object defying object-oriented feature.
+
+
+4 Pillars of OOPs
+
+Inheritance:
+
+
+
+
+
+
+
 
