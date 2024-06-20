@@ -1521,56 +1521,57 @@ toUpperCase
 OOPS
 
 Object Oriented Programing
-
-
-Class
-
-A class is a user-defined blueprint or prototype from which objects are created. It represents the set of properties or methods that are common
-to all objects of one type. Using classes, you can create multiple objects with the same behavior instead of writing their code multiple times.
-This includes classes for objects occurring more than once in your code. In general, class declarations can include these components in order: 
-
-
-Object
-
-An object is a basic unit of Object-Oriented Programming that represents real-life entities. A typical Java program creates many objects, 
-which as you know, interact by invoking methods. The objects are what perform your code, they are the part of your code visible to the viewer/user.
+refer this https://www.geeksforgeeks.org/object-oriented-programming-oops-concept-in-java/?ref=lbp
 
 
 
-public class Java {
-    
-    static String Employee_name;
-    static float Employee_salary;
-
-    static void set(String n, float p) {
-        Employee_name  = n;
-        Employee_salary  = p;
-    }
-
-    static void get() {
-        System.out.println("Employee name is: " +Employee_name );
-        System.out.println("Employee CTC is: " + Employee_salary);
-    }
-
-    public static void main(String args[]) {
-        Java.set("Anunay Reddy", 100000.0f);
-        Java.get();
-    }
-}
-
-
-static keyword
-
-When we declare a class as static, then it can be used without the use of an object in Java. If we are using static 
-function or static variable then we can’t call that function or variable by using dot(.) or class object defying object-oriented feature.
-
-
-4 Pillars of OOPs
-
-Inheritance:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
 
 
 
