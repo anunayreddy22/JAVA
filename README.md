@@ -1472,25 +1472,26 @@ The Java compiler applies autoboxing when a primitive value is:Passed as a param
 wrapper class.Assigned to a variable of the corresponding wrapper class.
 
 
-import java .util.*;
-class home {
-
-	public static void main(String args[]) {
-		int x = 5;
-		float y = 3.14f;
-		long z=6000;
-
-		// autoboxing
-		Integer intobj = x;
-		Float floatobj=y;
-		Long longobj=z;
-		// print 
-		System.out.println(intobj);
-		System.out.println(floatobj);
-		System.out.println(longobj);
+CODE:
+		import java .util.*;
+		class home {
+	
+		public static void main(String args[]) {
+			int x = 5;
+			float y = 3.14f;
+			long z=6000;
+	
+			// autoboxing
+			Integer intobj = x;
+			Float floatobj=y;
+			Long longobj=z;
+			// print 
+			System.out.println(intobj);
+			System.out.println(floatobj);
+			System.out.println(longobj);
+		}
 	}
-}
-
+	
 
 Unboxing
 
@@ -1519,20 +1520,66 @@ toUpperCase
 
 
 
+STRINGS
+
+String str = "";  or String s = new String("");
+
+StringBuilder
+
+StringBuilder sb = new StringBuilder();
+sb.append("GFG");
+
+
+
+String Methods
+
+s.charAt(i)
+"GeeksforGeeks".charAt(3); // returns  ‘k’
+
+GeeksforGeeks".substring(3); // returns “ksforGeeks”
+
+"GeeksforGeeks".substring(2, 5); // returns “eks”
+
+String s1 = ”Geeks”;
+String s2 = ”forGeeks”;
+String output = s1.concat(s2); // returns “GeeksforGeeks”
+
+String s = ”Learn Share Learn”;
+int output = s.indexOf(“Share”); // returns 6
+
+“Geeks”.equalsIgnoreCase(“Geeks”); // returns true
+Boolean out = “Geeks”.equals(“Geeks”); // returns true
 
 
 
 
+String Tokenizer
+
+StringTokenizer(String str, String delim, boolean flag)
 
 
+1. If the flag is false, delimiter characters serve to separate tokens
 
+Example:
 
+Input : if string --> "hello geeks" and Delimiter is " ", then 
+Output:  tokens are "hello" and "geeks".
 
+2. If the flag is true, delimiter characters are considered to be tokens.
 
+Example:
 
+Input : String --> is "hello geeks"and Delimiter is " ", then 
+Output: Tokens --> "hello", " " and "geeks".
 
+3. Multiple delimiters can be chosen for a single string.
 
+Example:
 
+Syntax: StringTokenizer st1 = new StringTokenizer( "2+3-1*8/4", "+*-/");
+
+Input : String --> is "2+3-1*8/4" and Delimiters are +,*,-,/ 
+Output: Tokens --> "2","3","1","8","4".
 
 
 
