@@ -27,7 +27,8 @@ This File Contains
     Java Networking
     JDBC
 
-                                                          JAVA
+
+JAVA
                                                     
 
 
@@ -1506,7 +1507,7 @@ Integer number = new Integer(5);  or  Integer number = Integer.valueOf(5);
 
 Character class->  Character ch = new Character('a');
 
-Methods in Character class                                                          Methods in Integer Class
+Methods in Character class                                                                      Methods in Integer Class
 
 toString(char ch)                                                                                    toString()
 Character.isLetter                                                                    valueOf() : returns the Integer object
