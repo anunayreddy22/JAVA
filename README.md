@@ -1583,6 +1583,159 @@ Output: Tokens --> "2","3","1","8","4".
 
 
 
+Java Collections
+
+1. ArrayList
+
+ArrayList is a part of the Java collections framework and it is a class of java.util package. It provides us with dynamic arrays in Java. Though, it may be slower than standard arrays but can be helpful in programs where lots of manipulation in the array is needed.
+
+No need to declare size before hand in arraylist.
+
+Decalaration:
+
+ArrayList<Integer> l = new ArrayList<>();
+
+Methods in ArrayList
+
+l.add(x)  --> appends element at last
+l.add(x,3)  --> At specific index
+l.set(y,e)  --> changing elements
+l.remove --> deleteing elements
+Collections.sort(l);  --> sorts the list
+list.size()  --> size of list
+int[] arr = l.toArray() --> conversion to array
+
+2. HashSet
+
+Objects that you insert in HashSet are not guaranteed to be inserted in the same order. Objects are inserted based on their hash code. no duplicates found in set
+
+
+Declaration:  HashSet<Integer> set = new HashSet<>();
+
+set.add(x);
+set.remove(x);
+using enhanced for loop is easy for iterating a hash set rather than using Iterator
+set.contains()
+set.size()
+isEmpty()
+
+
+Linked Hash Set
+
+LinkedHashSet<String> hs = new LinkedHashSet<>();
+
+Same as hash Set but in hashset the order is not retained where are it is not the case in LinkedHashSet
+
+
+TreeSet
+
+TreeSet is basically an implementation of a self-balancing binary search tree like a Red-Black Tree. Therefore operations like add, remove, and search takes O(log(N)) time. The reason is that in a self-balancing tree, it is made sure that the height of the tree is always O(log(N)) for all the operations. Therefore, this is considered as one of the most efficient data structures in order to store the huge sorted data and perform operations on it. However, operations like printing N elements in the sorted order take O(N) time.
+
+
+TreeSet<String> treeSet = new TreeSet<>();
+
+However, the insertion order is not retained in the TreeSet. Internally, for every element, the values are compared and sorted in ascending order. 
+
+
+3. Queue
+
+Follows FIFO order
+
+Being an interface the queue needs a concrete class for the declaration and the most common classes are the PriorityQueue and LinkedList in Java.
+
+Queue<String> queue = new LinkedList<>();
+
+add, offer --> add elements to rear
+remove,poll --> removes elements from front
+peek(): Returns the element at the front of the queue without removing it orelse null
+
+
+Queue<String> pq = new PriorityQueue<>();
+
+The insertion order is not retained in the PriorityQueue. The elements are stored based on the priority order which is ascending by default. 
+
+iterating Queue
+
+	Iterator iterator = pq.iterator();
+ 
+        while (iterator.hasNext()) {
+            System.out.print(iterator.next() + " ");
+        }
+PriorityBlockingQueue: It is to be noted that both the implementations, the PriorityQueue and LinkedList are not thread-safe. PriorityBlockingQueue is one alternative implementation if thread-safe implementation is needed. PriorityBlockingQueue is an unbounded blocking queue that uses the same ordering rules as class PriorityQueue and supplies blocking retrieval operations. 
+
+
+
+4. Deque
+
+The Deque (double-ended queue) interface in Java is a subinterface of the Queue interface and extends it to provide a double-ended queue, which is a queue that allows elements to be added and removed from both ends.
+
+Deque<Integer> deque = new ArrayDeque<>();
+
+deque.add --> inbuit adds at last
+deque.addFirst(40);  --> adds at First
+deque.addLast(30)   --> adds at Last
+.getFirst, .getlast
+peek, peekFirst, peekLast
+poll, poolLast
+.removeFirstOccurrence("x");
+
+
+5. HashMap
+
+Hashmap stores as key value pairs ex: (a,1) (b,2) ....
+ 
+        // Adding elements to the Map
+        // using standard put() method
+	HashMap<String, Integer> map = new HashMap<>();
+        map.put("vishal", 10);
+        map.put("sachin", 30);
+        map.put("vaibhav", 20);
+
+Methods
+
+map.containsKey(); map.containsKey()
+map.get() map.put();
+map.keySet() --> gives all keys
+map.EntrySet() 
+
+Iterating in HashMap
+
+ 	using Key Set
+	for (String key : map.keySet()) {
+            System.out.println("Key: " + key + ", Value: " + map.get(key));
+        }
+
+ 	using entry Set
+	for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            System.out.println("Key: " + entry.getKey() + ", Value: " + entry.getValue());
+        }
+
+ Inserting Data using map.getorDefault
+
+  	for (String x: y) {
+            map.put(x, map.getOrDefault(x, 0) + 1);
+        }
+
+The LinkedHashMap Class is just like HashMap with an additional feature of maintaining an order of elements inserted into it. 
+TreeMap for Sorted Order.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
