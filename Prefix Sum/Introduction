@@ -1,0 +1,7 @@
+Often these kinds of problems asks for either count or length (minimum/maximum) of subarray based on certain mathematical condition for example that the subray sum or
+sub array divisbility or mod or vowel counting etc etc.
+
+At first glance you will tempted to attempt these kind of problems using Sliding Window technique but quickly realizes that its not possible, either elements are -ve or some other conditions.
+
+For these kind of problem, we have Prefix Sum approach.
+
