@@ -18,10 +18,11 @@ This File Contains
     OOPS
     Arrays
     Strings
-    Exception Handling
+    Collection Frameworks
     Multi Threading
     Synchronization
     Serialization
+    Exception Handling
     File Handling
     Java IO
     Java Networking
@@ -143,7 +144,7 @@ execute the native code, as compared to having the JVM interpret the same sequen
 translation process. This subsequently leads to performance gains in the execution speed, unless the compiled methods are executed less frequently.
 
 
-             At Compile Time                            At Run time
+At Compile Time                            At Run time
     
 sourcecode.java -> Compiler -> ByteCode ->  JIT Compiler-> Native Machine code
 
@@ -177,13 +178,13 @@ For example, Student is a class while a particular student named Anunay is an ob
 
 Declaration
 
-access_modifier class <class_name>
-{  
-    data member;  
-    method;  
-    constructor;
-    nested class;
-}
+        access_modifier class <class_name>
+        {  
+            data member;  
+            method;  
+            constructor;
+            nested class;
+        }
 
 How to Create an Object of a Class
 
@@ -191,50 +192,50 @@ Using new Keyword
 
 It is most common and used way to create an object in Java
 
-// creating object of class Test
-Test t = new Test();
+        // creating object of class Test
+        Test t = new Test();
 
 
 
-//This following code may be difficult to understand at this point just have a glance at how an object is created and called.
+        //This following code may be difficult to understand at this point just have a glance at how an object is created and called.
+        
+        class Lamp {
+          
+          // stores the value for light
+          // true if light is on
+          // false if light is off
+          boolean isOn;
+        
+          // method to turn on the light
+          void turnOn() {
+            isOn = true;
+            System.out.println("Light on? " + isOn);
+        
+          }
+        
+          // method to turnoff the light
+          void turnOff() {
+            isOn = false;
+            System.out.println("Light on? " + isOn);
+          }
+        }
 
-class Lamp {
-  
-  // stores the value for light
-  // true if light is on
-  // false if light is off
-  boolean isOn;
-
-  // method to turn on the light
-  void turnOn() {
-    isOn = true;
-    System.out.println("Light on? " + isOn);
-
-  }
-
-  // method to turnoff the light
-  void turnOff() {
-    isOn = false;
-    System.out.println("Light on? " + isOn);
-  }
-}
-
-class Main {
-  public static void main(String[] args) {
-
-    // create objects led and halogen
-    Lamp led = new Lamp();
-    Lamp halogen = new Lamp();
-
-    // turn on the light by
-    // calling method turnOn()
-    led.turnOn();
-
-    // turn off the light by
-    // calling method turnOff()
-    halogen.turnOff();
-  }
-}
+        class Main {
+          public static void main(String[] args) {
+        
+            // create objects led and halogen
+            Lamp led = new Lamp();
+            Lamp halogen = new Lamp();
+        
+            // turn on the light by
+            // calling method turnOn()
+            led.turnOn();
+        
+            // turn off the light by
+            // calling method turnOff()
+            halogen.turnOff();
+          }
+        }
 
 
 Naming Conventions in Java 
@@ -251,12 +252,13 @@ Type 1: Classes and Interfaces
 Class names should be nouns, in mixed cases with the first letter of each internal word capitalized. Interfaces names should also be capitalized 
 just like class names. Use whole words and must avoid acronyms and abbreviations.
 
-Classes: class Student { }
-         class Integer {}
-         class Scanner {}
-Interfaces : Runnable
-             Remote
-             Serializable 
+                Classes: class Student { }
+                         class Integer {}
+                         class Scanner {}
+                         
+                Interfaces : Runnable
+                             Remote
+                             Serializable 
 
 Type 2: Methods 
 
@@ -276,20 +278,20 @@ Common names for temporary variables are i, j, k, m, and n for integers; c, d, a
 Java Hello World Program
     
 
-    class HelloWorld {
-    // Your program begins with a call to main().
-    public static void main(String args[])
-    {
-        // Prints "Hello, World" 
-        System.out.println("Hello, World");
-    }
-}
+            class HelloWorld {
+            // Your program begins with a call to main().
+            public static void main(String args[])
+            {
+                // Prints "Hello, World" 
+                System.out.println("Hello, World");
+            }
+        }
 
 
 In the Java programming language, every application must contain a main method. The main function(method) is the entry point of your Java 
 application, and it’s mandatory in a Java program. whose signature in Java is: 
 
-public static void main(String[] args)
+        public static void main(String[] args)
     
 Explanation of the above syntax
 
@@ -335,42 +337,28 @@ Java identifiers are case-sensitive.
 There is no limit on the length of the identifier but it is advisable to use an optimum length of 4 – 15 letters only.
 Reserved Words can’t be used as an identifier. For example “int while = 20;” is an invalid statement as a while is a reserved word. 
     
-There are 53 reserved words in Java some of them are
-
-abstract	continue	for	protected	transient
-Assert	Default	Goto	public	Try
-Boolean	Do	If	Static	throws
-break	double	implements	strictfp	Package
-byte	else	import	super	Private
-case	enum	Interface	Short	switch
-Catch	Extends	instanceof	return	void
-Char	Final	Int	synchronized	volatile
-class	finally	long	throw	Date
-const	float	Native	This	while
-
-
 
 Examples of valid identifiers : 
-
-MyVariable
-MYVARIABLE
-myvariable
-x
-i
-x1
-i1
-_myvariable
-$myvariable
-sum_of_array
-geeks123
+        
+        MyVariable
+        MYVARIABLE
+        myvariable
+        x
+        i
+        x1
+        i1
+        _myvariable
+        $myvariable
+        sum_of_array
+        geeks123
 
 Examples of invalid identifiers : 
 
-My Variable  // contains a space
-123geeks   // Begins with a digit
-a+c // plus sign is not an alphanumeric character
-variable-2 // hyphen is not an alphanumeric character
-sum_&_difference // ampersand is not an alphanumeric character
+        My Variable  // contains a space
+        123geeks   // Begins with a digit
+        a+c // plus sign is not an alphanumeric character
+        variable-2 // hyphen is not an alphanumeric character
+        sum_&_difference // ampersand is not an alphanumeric character
 
 
 
@@ -380,27 +368,27 @@ OPERATORS
 
     
 These are used to perform simple arithmetic operations on primitive data types. 
-
-* : Multiplication
-/ : Division
-% : Modulo- for remainder ex: 10%8 = 2
-+ : Addition
-– : Subtraction
+        
+        * : Multiplication
+        / : Division
+        % : Modulo- for remainder ex: 10%8 = 2
+        + : Addition
+        – : Subtraction
 
 2. Unary Operators
     
 
 Unary operators need only one operand. They are used to increment, decrement, or negate a value. 
-
-– : Unary minus, used for negating the values.
-+ : Unary plus  It performs an automatic conversion to int when the type of its operand is the byte, char, or short. 
-++ : Increment operator, used for incrementing the value by 1. There are two varieties of increment operators. 
-Post-Increment: Value is first used for computing the result and then incremented.(a++)
-Pre-Increment: Value is incremented first, and then the result is computed.(++a)
-– –  : Decrement operator, used for decrementing the value by 1. There are two varieties of decrement operators. 
-Post-decrement: Value is first used for computing the result and then decremented.(a--)
-Pre-Decrement: The value is decremented first, and then the result is computed.(--a)
-! : Logical not operator, used for inverting a boolean value. changing from false to true or vice versa
+        
+        – : Unary minus, used for negating the values.
+        + : Unary plus  It performs an automatic conversion to int when the type of its operand is the byte, char, or short. 
+        ++ : Increment operator, used for incrementing the value by 1. There are two varieties of increment operators. 
+        Post-Increment: Value is first used for computing the result and then incremented.(a++)
+        Pre-Increment: Value is incremented first, and then the result is computed.(++a)
+        – –  : Decrement operator, used for decrementing the value by 1. There are two varieties of decrement operators. 
+        Post-decrement: Value is first used for computing the result and then decremented.(a--)
+        Pre-Decrement: The value is decremented first, and then the result is computed.(--a)
+        ! : Logical not operator, used for inverting a boolean value. changing from false to true or vice versa
 
 3. Assignment Operator
 
@@ -414,11 +402,11 @@ variable = value;
 
 In many cases, the assignment operator can be combined with other operators to build a shorter version of the statement called a Compound Statement. For example, instead of a = a+5, we can write a += 5. 
 
-+=, for adding the left operand with the right operand and then assigning it to the variable on the left.
--=, for subtracting the right operand from the left operand and then assigning it to the variable on the left.
-*=, for multiplying the left operand with the right operand and then assigning it to the variable on the left.
-/=, for dividing the left operand by the right operand and then assigning it to the variable on the left.
-%=, for assigning the modulo of the left operand by the right operand and then assigning it to the variable on the left.
+        +=, for adding the left operand with the right operand and then assigning it to the variable on the left.
+        -=, for subtracting the right operand from the left operand and then assigning it to the variable on the left.
+        *=, for multiplying the left operand with the right operand and then assigning it to the variable on the left.
+        /=, for dividing the left operand by the right operand and then assigning it to the variable on the left.
+        %=, for assigning the modulo of the left operand by the right operand and then assigning it to the variable on the left.
 
 For example, instead of a = a+5, we can write a += 5. 
 
@@ -429,12 +417,12 @@ These operators are used to check for relations like equality, greater than, and
 and are extensively used in looping statements as well as conditional if-else statements
 Some of the relational operators are- 
 
-==, Equal to returns true if the left-hand side is equal to the right-hand side.
-!=, Not Equal to returns true if the left-hand side is not equal to the right-hand side.
-<, less than: returns true if the left-hand side is less than the right-hand side.
-<=, less than or equal to returns true if the left-hand side is less than or equal to the right-hand side.
->, Greater than: returns true if the left-hand side is greater than the right-hand side.
->=, Greater than or equal to returns true if the left-hand side is greater than or equal to the right-hand side.
+        ==, Equal to returns true if the left-hand side is equal to the right-hand side.
+        !=, Not Equal to returns true if the left-hand side is not equal to the right-hand side.
+        <, less than: returns true if the left-hand side is less than the right-hand side.
+        <=, less than or equal to returns true if the left-hand side is less than or equal to the right-hand side.
+        >, Greater than: returns true if the left-hand side is greater than the right-hand side.
+        >=, Greater than or equal to returns true if the left-hand side is greater than or equal to the right-hand side.
 
 
     
@@ -448,9 +436,9 @@ and vice-versa
 
 Conditional operators are:
 
-&&, Logical AND: returns true when both conditions are true.
-||, Logical OR: returns true if at least one condition is true.
-!, Logical NOT: returns true when a condition is false and vice-versa
+        &&, Logical AND: returns true when both conditions are true.
+        ||, Logical OR: returns true if at least one condition is true.
+        !, Logical NOT: returns true when a condition is false and vice-versa
 
 
 6. Ternary operator
@@ -460,28 +448,28 @@ The ternary operator is a shorthand version of the if-else statement. It has thr
 
 The general format is:
 
-condition ? if true : if false
+        condition ? if true : if false
 The above statement means that if the condition evaluates to true, then execute the statements after the ‘?’ else execute the statements after
 the ‘:’.  
 
-Sample Code:
-
-// Java program to illustrate
-// max of three numbers using
-// ternary operator.
-public class operators {
-    public static void main(String[] args)
-    {
-        int a = 20, b = 10, c = 30, result;
-
-        // result holds max of three
-        // numbers
-        result
-            = ((a > b) ? (a > c) ? a : c : (b > c) ? b : c);
-        System.out.println("Max of three numbers = "
-                           + result);
-    }
-}
+        Sample Code:
+        
+        // Java program to illustrate
+        // max of three numbers using
+        // ternary operator.
+        public class operators {
+            public static void main(String[] args)
+            {
+                int a = 20, b = 10, c = 30, result;
+        
+                // result holds max of three
+                // numbers
+                result
+                    = ((a > b) ? (a > c) ? a : c : (b > c) ? b : c);
+                System.out.println("Max of three numbers = "
+                                   + result);
+            }
+        }
 
 
 7. Bitwise Operators
@@ -490,35 +478,35 @@ public class operators {
 These operators are used to perform the manipulation of individual bits of a number. They can be used with any of the integer types.
 They are used when performing update and query operations of the Binary indexed trees. 
 
-&, Bitwise AND operator: returns bit by bit AND of input values.
-|, Bitwise OR operator: returns bit by bit OR of input values.
-^, Bitwise XOR operator: returns bit-by-bit XOR of input values.
-~, Bitwise Complement Operator: This is a unary operator which returns the one’s complement representation of the input value, i.e.,
-with all bits inverted.
+        &, Bitwise AND operator: returns bit by bit AND of input values.
+        |, Bitwise OR operator: returns bit by bit OR of input values.
+        ^, Bitwise XOR operator: returns bit-by-bit XOR of input values.
+        ~, Bitwise Complement Operator: This is a unary operator which returns the one’s complement representation of the input value, i.e.,
+        with all bits inverted.
 
 Sample Code:
 
-// Java Program to implement
-// bitwise operators
-import java.io.*;
-
-// Driver class
-class GFG {
-    // main function
-    public static void main(String[] args)
-    {
-        // Bitwise operators
-        int d = 0b1010;
-        int e = 0b1100;
-        System.out.println("d & e: " + (d & e));  // output will be 8
-        System.out.println("d | e: " + (d | e));  // output will be 14
-        System.out.println("d ^ e: " + (d ^ e));  // output will be 6
-        System.out.println("~d: " + (~d));        // output will be -11
-        System.out.println("d << 2: " + (d << 2));  // output will be 40
-        System.out.println("e >> 1: " + (e >> 1));   // output will be 40
-        System.out.println("e >>> 1: " + (e >>> 1));  // output will be 6
-    }
-}
+        // Java Program to implement
+        // bitwise operators
+        import java.io.*;
+        
+        // Driver class
+        class GFG {
+            // main function
+            public static void main(String[] args)
+            {
+                // Bitwise operators
+                int d = 0b1010;
+                int e = 0b1100;
+                System.out.println("d & e: " + (d & e));  // output will be 8
+                System.out.println("d | e: " + (d | e));  // output will be 14
+                System.out.println("d ^ e: " + (d ^ e));  // output will be 6
+                System.out.println("~d: " + (~d));        // output will be -11
+                System.out.println("d << 2: " + (d << 2));  // output will be 40
+                System.out.println("e >> 1: " + (e >> 1));   // output will be 40
+                System.out.println("e >>> 1: " + (e >>> 1));  // output will be 6
+            }
+        }
 
 
 8. Shift Operators
@@ -562,21 +550,21 @@ A variable defined within a block or method or constructor is called a local var
 These variables are created when the block is entered, or the function is called and destroyed after exiting from the block or when the call 
 returns from the function. The scope of these variables exists only within the block in which the variables are declared, i.e., we can access 
 these variables only within that block. Initialization of the local variable is mandatory before using it in the defined scope.
-
- // Java Program to implement
-// Local Variables
-import java.io.*;
-
-class Java {
-	public static void main(String[] args)
-	{
-		// Declared a Local Variable
-		int var = 10;
-
-		// This variable is local to this main method only
-		System.out.println("Local Variable: " + var);   // Output Local Variable: 10
-	}
-}
+        
+         // Java Program to implement
+        // Local Variables
+        import java.io.*;
+        
+        class Java {
+        	public static void main(String[] args)
+        	{
+        		// Declared a Local Variable
+        		int var = 10;
+        
+        		// This variable is local to this main method only
+        		System.out.println("Local Variable: " + var);   // Output Local Variable: 10
+        	}
+        }
 
 
 2. Instance Variables
@@ -590,40 +578,40 @@ data type of variable. For String it is null, for float it is 0.0f, for int it i
 Instance variables can be accessed only by creating objects. We initialize instance variables using constructors while creating an object.
 We can also use instance blocks to initialize the instance variables.
 
-
-// Java Program to demonstrate
-// Instance Variables
-import java.io.*;
-
-class Java {
-
-	// Declared Instance Variable
-	public String geek;
-	public int i;
-	public Integer I;
-	public Java()
-	{
-		// Default Constructor
-		// initializing Instance Variable
-		this.geek = "Shubham Jain";
-	}
-
-	// Main Method
-	public static void main(String[] args)
-	{
-		// Object Creation
-		Java name = new Java();
-
-		// Displaying O/P
-		System.out.println("Geek name is: " + name.geek);
-		System.out.println("Default value for int is "
-						+ name.i);
-	
-		// toString() called internally
-		System.out.println("Default value for Integer is "
-						+ name.I);
-	}
-}
+        
+        // Java Program to demonstrate
+        // Instance Variables
+        import java.io.*;
+        
+        class Java {
+        
+        	// Declared Instance Variable
+        	public String geek;
+        	public int i;
+        	public Integer I;
+        	public Java()
+        	{
+        		// Default Constructor
+        		// initializing Instance Variable
+        		this.geek = "Shubham Jain";
+        	}
+        
+        	// Main Method
+        	public static void main(String[] args)
+        	{
+        		// Object Creation
+        		Java name = new Java();
+        
+        		// Displaying O/P
+        		System.out.println("Geek name is: " + name.geek);
+        		System.out.println("Default value for int is "
+        						+ name.i);
+        	
+        		// toString() called internally
+        		System.out.println("Default value for Integer is "
+        						+ name.I);
+        	}
+        }
 
 
 // Just take a glance we will learn in depth of what is a constructor and this. reference  soon
@@ -641,28 +629,28 @@ execution ends. Initialization of a static variable is not mandatory. Its defaul
 For String it is null, for float it is 0.0f, for int it is 0, for Wrapper classes like Integer it is null, etc.
 
 
-// Java Program to demonstrate
-// Static variables
-import java.io.*;
-
-class GFG {
-	// Declared static variable
-	public static String geek = "Shubham Jain";
-
-	public static void main(String[] args)
-	{
-
-		// geek variable can be accessed without object
-		// creation Displaying O/P GFG.geek --> using the
-		// static variable
-		System.out.println("Geek Name is : " + GFG.geek);
-
-		// static int c=0;
-		// above line,when uncommented,
-		// will throw an error as static variables cannot be
-		// declared locally.
-	}
-}
+        // Java Program to demonstrate
+        // Static variables
+        import java.io.*;
+        
+        class GFG {
+        	// Declared static variable
+        	public static String geek = "Shubham Jain";
+        
+        	public static void main(String[] args)
+        	{
+        
+        		// geek variable can be accessed without object
+        		// creation Displaying O/P GFG.geek --> using the
+        		// static variable
+        		System.out.println("Geek Name is : " + GFG.geek);
+        
+        		// static int c=0;
+        		// above line,when uncommented,
+        		// will throw an error as static variables cannot be
+        		// declared locally.
+        	}
+        }
 
 Scope of a Variable 
 
@@ -671,16 +659,16 @@ Member Variables (Class Level Scope)
 
 These variables must be declared inside class (outside any function). They can be directly accessed anywhere in class. 
 
-public class Test
-{
-    // All variables defined directly inside a class 
-    // are member variables
-    int a;
-    private String b;
-    void method1() {....}
-    int method2() {....}
-    char c;
-}
+        public class Test
+        {
+            // All variables defined directly inside a class 
+            // are member variables
+            int a;
+            private String b;
+            void method1() {....}
+            int method2() {....}
+            char c;
+        }
 
 Local Variables (Method Level Scope)
 
@@ -689,14 +677,14 @@ Variables declared inside a method have method level scope and can’t be access
 Local variables don’t exist after method’s execution is over. 
 
 
-public class Test
-{
-    void method1() 
-    {
-       // Local variable (Method level scope)
-       int x;
-    }
-}
+        public class Test
+        {
+            void method1() 
+            {
+               // Local variable (Method level scope)
+               int x;
+            }
+        }
 
 
 Loop Variables (Block Scope) 
@@ -705,23 +693,23 @@ Loop Variables (Block Scope)
 A variable declared inside pair of brackets “{” and “}” in a method has scope within the brackets only.
 
     
-public class Test
-{
-    public static void main(String args[])
-    {
+        public class Test
         {
-            // The variable x has scope within
-            // brackets
-            int x = 10;
-            System.out.println(x);
-        }
+            public static void main(String args[])
+            {
+                {
+                    // The variable x has scope within
+                    // brackets
+                    int x = 10;
+                    System.out.println(x);
+                }
+                
+                // Uncommenting below line would produce
+                // error since variable x is out of scope.
         
-        // Uncommenting below line would produce
-        // error since variable x is out of scope.
-
-        // System.out.println(x); 
-    }
-}
+                // System.out.println(x); 
+            }
+        }
 
 
 INPUT / OUTPUT
@@ -748,35 +736,35 @@ which reads an array of characters, and a readLine() function which reads a line
 InputStreamReader() is a function that converts the input stream of bytes into a stream of characters so that it can be read as 
 BufferedReader expects a stream of characters. BufferedReader can throw checked Exceptions.
 
-// Java Program for taking user
-// input using BufferedReader Class
-import java.io.*;
-
-class GFG {
-
-    // Main Method
-    public static void main(String[] args)
-        throws IOException
-    {
-        // Creating BufferedReader Object
-        // InputStreamReader converts bytes to
-        // stream of character
-        BufferedReader bfn = new BufferedReader(
-            new InputStreamReader(System.in));
-
-        // String reading internally
-        String str = bfn.readLine();
-
-        // Integer reading internally
-        int it = Integer.parseInt(bfn.readLine());
-
-        // Printing String
-        System.out.println("Entered String : " + str);
-
-        // Printing Integer
-        System.out.println("Entered Integer : " + it);
-    }
-}
+        // Java Program for taking user
+        // input using BufferedReader Class
+        import java.io.*;
+        
+        class GFG {
+        
+            // Main Method
+            public static void main(String[] args)
+                throws IOException
+            {
+                // Creating BufferedReader Object
+                // InputStreamReader converts bytes to
+                // stream of character
+                BufferedReader bfn = new BufferedReader(
+                    new InputStreamReader(System.in));
+        
+                // String reading internally
+                String str = bfn.readLine();
+        
+                // Integer reading internally
+                int it = Integer.parseInt(bfn.readLine());
+        
+                // Printing String
+                System.out.println("Entered String : " + str);
+        
+                // Printing Integer
+                System.out.println("Entered Integer : " + it);
+            }
+        }
 
 
 //We use Scanner class method only everywhere
@@ -800,65 +788,66 @@ Importing Scanner Class
 
 
 
-	
-import java.util.Scanner;  
+        	
+        import java.util.Scanner;  
+        
+        // Java Program to show how to take
+        // input from user using Scanner Class
+        
+        import java.util.*;
+        
+        class GFG {
+        
+            public static void main(String[] args)
+            {
+                // Scanner definition
+                Scanner scn = new Scanner(System.in);
+        
+                // input is a string ( one word )
+                // read by next() function
+                String str1 = scn.next();
+        
+                // print String
+                System.out.println("Entered String str1 : " + str1);
+        
+                // input is a String ( complete Sentence )
+                // read by nextLine()function
+                String str2 = scn.nextLine();
+        
+                // print string
+                System.out.println("Entered String str2 : " + str2);
+        
+                // input is an Integer
+                // read by nextInt() function
+                int x = scn.nextInt();
+        
+                // print integer
+                System.out.println("Entered Integer : " + x);
+        
+                // input is a floatingValue
+                // read by nextFloat() function
+                float f = scn.nextFloat();
+        
+                // print floating value
+                System.out.println("Entered FloatValue : " + f);
+            }
+        }
 
-// Java Program to show how to take
-// input from user using Scanner Class
+Used While taking Input:
 
-import java.util.*;
+        nextBoolean()                       Used for reading Boolean value                    
+        nextByte()                          Used for reading Byte value
+        nextDouble()                        Used for reading Double value
+        nextFloat()                         Used for reading Float value
+        nextInt()                           Used for reading Int value
+        nextLine()                          Used for reading Line value
+        nextLong()                          Used for reading Long value
+        nextShort()                         Used for reading Short value
+        
+Scanner Syntax: 
 
-class GFG {
-
-    public static void main(String[] args)
-    {
-        // Scanner definition
-        Scanner scn = new Scanner(System.in);
-
-        // input is a string ( one word )
-        // read by next() function
-        String str1 = scn.next();
-
-        // print String
-        System.out.println("Entered String str1 : " + str1);
-
-        // input is a String ( complete Sentence )
-        // read by nextLine()function
-        String str2 = scn.nextLine();
-
-        // print string
-        System.out.println("Entered String str2 : " + str2);
-
-        // input is an Integer
-        // read by nextInt() function
-        int x = scn.nextInt();
-
-        // print integer
-        System.out.println("Entered Integer : " + x);
-
-        // input is a floatingValue
-        // read by nextFloat() function
-        float f = scn.nextFloat();
-
-        // print floating value
-        System.out.println("Entered FloatValue : " + f);
-    }
-}
-
-
-
-nextBoolean()                       Used for reading Boolean value                    
-nextByte()                          Used for reading Byte value
-nextDouble()                        Used for reading Double value
-nextFloat()                         Used for reading Float value
-nextInt()                           Used for reading Int value
-nextLine()                          Used for reading Line value
-nextLong()                          Used for reading Long value
-nextShort()                         Used for reading Short value
-	
-
-Scanner in = new Scanner(System.in);
-String s = in.nextLine();
+        Scanner in = new Scanner(System.in);
+        String s = in.nextLine();
 
 
 
@@ -883,27 +872,27 @@ Constructors
 In Java, a Constructor is a block of codes similar to the method. It is called when an instance of the class is created. At the time of 
 calling the constructor, memory for the object is allocated in the memory. It is a special type of method that is used to initialize the object. 
 Every time an object is created using the new() keyword, at least one constructor is called.
-
-// Java Program to demonstrate
-// Constructor
-import java.io.*;
-
-// Driver Class
-class Geeks {
-  
-    // Constructor
-    Geeks()
-    {
         
-        System.out.println("Constructor Called");
-    }
-
-    // main function
-    public static void main(String[] args)
-    {
-        Geeks geek = new Geeks();
-    }
-}
+        // Java Program to demonstrate
+        // Constructor
+        import java.io.*;
+        
+        // Driver Class
+        class Geeks {
+          
+            // Constructor
+            Geeks()
+            {
+                
+                System.out.println("Constructor Called");
+            }
+        
+            // main function
+            public static void main(String[] args)
+            {
+                Geeks geek = new Geeks();
+            }
+        }
 
 
 When Java Constructor is called?
@@ -926,22 +915,22 @@ parameterized constructor. The default constructor changed into the parameterize
 default constructor. The default constructor can be implicit or explicit. If we don’t define explicitly, we get an implicit default constructor. 
 If we manually write a constructor, the implicit one is overridded.
 
-// Java Program to demonstrate
-// Default Constructor
-import java.io.*;
-
-// Driver class
-class GFG {
-
-    // Default Constructor
-    GFG() { System.out.println("Default constructor"); }
-
-    // Driver function
-    public static void main(String[] args)
-    {
-        GFG hello = new GFG();
-    }
-}
+        // Java Program to demonstrate
+        // Default Constructor
+        import java.io.*;
+        
+        // Driver class
+        class GFG {
+        
+            // Default Constructor
+            GFG() { System.out.println("Default constructor"); }
+        
+            // Driver function
+            public static void main(String[] args)
+            {
+                GFG hello = new GFG();
+            }
+        }
 
 
 Parameterized Constructor in Java
@@ -950,27 +939,27 @@ A constructor that has parameters is known as parameterized constructor. If we w
 use a parameterized constructor.
 
 
-// Java Program for Parameterized Constructor
-import java.io.*;
-class Geek {
-    // data members of the class.
-    String name;
-    int id;
-    Geek(String name, int id)
-    {
-        this.name = name;
-        this.id = id;
-    }
-}
-class GFG {
-    public static void main(String[] args)
-    {
-        // This would invoke the parameterized constructor.
-        Geek geek1 = new Geek("Avinash", 68);
-        System.out.println("GeekName :" + geek1.name
-                           + " and GeekId :" + geek1.id);
-    }
-}
+        // Java Program for Parameterized Constructor
+        import java.io.*;
+        class Geek {
+            // data members of the class.
+            String name;
+            int id;
+            Geek(String name, int id)
+            {
+                this.name = name;
+                this.id = id;
+            }
+        }
+        class GFG {
+            public static void main(String[] args)
+            {
+                // This would invoke the parameterized constructor.
+                Geek geek1 = new Geek("Avinash", 68);
+                System.out.println("GeekName :" + geek1.name
+                                   + " and GeekId :" + geek1.id);
+            }
+        }
 
 
 	
@@ -984,47 +973,47 @@ own copy constructor by passing the object of the same class to the other instan
 
 
 	
-// Java Program for Copy Constructor
-import java.io.*;
-
-class Geek {
-    // data members of the class.
-    String name;
-    int id;
-
-    // Parameterized Constructor
-    Geek(String name, int id)
-    {
-        this.name = name;
-        this.id = id;
-    }
-
-    // Copy Constructor
-    Geek(Geek obj2)
-    {
-        this.name = obj2.name;
-        this.id = obj2.id;
-    }
-}
-class GFG {
-    public static void main(String[] args)
-    {
-        // This would invoke the parameterized constructor.
-        System.out.println("First Object");
-        Geek geek1 = new Geek("Avinash", 68);
-        System.out.println("GeekName :" + geek1.name
-                           + " and GeekId :" + geek1.id);
-
-        System.out.println();
-
-        // This would invoke the copy constructor.
-        Geek geek2 = new Geek(geek1);
-        System.out.println(
-            "Copy Constructor used Second Object");
-        System.out.println("GeekName :" + geek2.name
-                           + " and GeekId :" + geek2.id);
-    }
-}
+        // Java Program for Copy Constructor
+        import java.io.*;
+        
+        class Geek {
+            // data members of the class.
+            String name;
+            int id;
+        
+            // Parameterized Constructor
+            Geek(String name, int id)
+            {
+                this.name = name;
+                this.id = id;
+            }
+        
+            // Copy Constructor
+            Geek(Geek obj2)
+            {
+                this.name = obj2.name;
+                this.id = obj2.id;
+            }
+        }
+        class GFG {
+            public static void main(String[] args)
+            {
+                // This would invoke the parameterized constructor.
+                System.out.println("First Object");
+                Geek geek1 = new Geek("Avinash", 68);
+                System.out.println("GeekName :" + geek1.name
+                                   + " and GeekId :" + geek1.id);
+        
+                System.out.println();
+        
+                // This would invoke the copy constructor.
+                Geek geek2 = new Geek(geek1);
+                System.out.println(
+                    "Copy Constructor used Second Object");
+                System.out.println("GeekName :" + geek2.name
+                                   + " and GeekId :" + geek2.id);
+            }
+        }
 
 
 
@@ -1036,67 +1025,67 @@ instance. It can be used to call current class methods and fields, to pass an in
 between the local and instance variables. Using “this” reference can improve code readability and reduce naming conflicts.
 
 
-
-// Java Program to implement
-// Java this reference
-
-// Driver Class
-public class Person {
-
-	// Fields Declared
-	String name;
-	int age;
-
-	// Constructor
-	Person(String name, int age)
-	{
-		this.name = name;
-		this.age = age;
-	}
-
-	// Getter for name
-	public String get_name() { return name; }
-
-	// Setter for name
-	public void change_name(String name)
-	{
-		this.name = name;
-	}
-
-	// Method to Print the Details of
-	// the person
-	public void printDetails()
-	{
-		System.out.println("Name: " + this.name);
-		System.out.println("Age: " + this.age);
-		System.out.println();
-	}
-
-	// main function
-	public static void main(String[] args)
-	{
-		// Objects Declared
-		Person first = new Person("ABC", 18);
-		Person second = new Person("XYZ", 22);
-
-		first.printDetails();
-		second.printDetails();
-
-		first.change_name("PQR");
-		System.out.println("Name has been changed to: "
-						+ first.get_name());
-	}
-}
+        
+        // Java Program to implement
+        // Java this reference
+        
+        // Driver Class
+        public class Person {
+        
+        	// Fields Declared
+        	String name;
+        	int age;
+        
+        	// Constructor
+        	Person(String name, int age)
+        	{
+        		this.name = name;
+        		this.age = age;
+        	}
+        
+        	// Getter for name
+        	public String get_name() { return name; }
+        
+        	// Setter for name
+        	public void change_name(String name)
+        	{
+        		this.name = name;
+        	}
+        
+        	// Method to Print the Details of
+        	// the person
+        	public void printDetails()
+        	{
+        		System.out.println("Name: " + this.name);
+        		System.out.println("Age: " + this.age);
+        		System.out.println();
+        	}
+        
+        	// main function
+        	public static void main(String[] args)
+        	{
+        		// Objects Declared
+        		Person first = new Person("ABC", 18);
+        		Person second = new Person("XYZ", 22);
+        
+        		first.printDetails();
+        		second.printDetails();
+        
+        		first.change_name("PQR");
+        		System.out.println("Name has been changed to: "
+        						+ first.get_name());
+        	}
+        }
 
 Output:
 
-Name: ABC
-Age: 18
-
-Name: XYZ
-Age: 22
-
-Name has been changed to: PQR
+        Name: ABC
+        Age: 18
+        
+        Name: XYZ
+        Age: 22
+        
+        Name has been changed to: PQR
 
 
 
@@ -1112,49 +1101,49 @@ If a class is declared as public then we can access that class from anywhere.
 In the below example we are creating a package pack1 inside that package we declare a class A which is public and inside that class, 
 we declare a method m1 which is also public. Now we create another package pack2 and inside that pack2 we import pack1 and declare a class B and
 in class B’s main method we create an object of type class A and trying to access the data of method m1
+        
+        // Java program to showcase the example
+        // of public access modifier
+        
+        // creating a package
+        package pack1;
+        
+        // import required packages
+        import java.io.*;
+        import java.util.*;
+        
+        // declaring a public class
+        public class A {
+        	
+        	// declaring method m1
+        	public void m1() { System.out.println("GFG"); }
+        }
 
-// Java program to showcase the example
-// of public access modifier
-
-// creating a package
-package pack1;
-
-// import required packages
-import java.io.*;
-import java.util.*;
-
-// declaring a public class
-public class A {
-	
-	// declaring method m1
-	public void m1() { System.out.println("GFG"); }
-}
 
 
-
-// creating a package
-package pack2;
-
-// import required packages
-import java.io.*;
-import java.util.*;
-
-// importing package pack1
-import pack1.A;
-
-// driver class
-class B {
-	
+        // creating a package
+        package pack2;
+        
+        // import required packages
+        import java.io.*;
+        import java.util.*;
+        
+        // importing package pack1
+        import pack1.A;
+        
+        // driver class
+        class B {
+        	
 	// main method
-	public static void main(String[] args)
-	{
-		// creating an object of type class A
-		A a = new A();
-		
-		// accessing the method m1()
-		a.m1();
-	}
-}
+        	public static void main(String[] args)
+        	{
+        		// creating an object of type class A
+        		A a = new A();
+        		
+        		// accessing the method m1()
+        		a.m1();
+        	}
+        }
 
 
 Modifier 2: Protected Access Modifier
@@ -1165,47 +1154,48 @@ This modifier can be applied to the data member, method, and constructor, but th
 A member is declared as protected as we can access that member within the current package and only in the child class of the outside package
 
 
-// Java program to showcase the example
-// of protected access modifier
-// import required packages
-import java.io.*;
-import java.util.*;
+Java program to showcase the exampleof protected access modifier
 
-// declaring a parent class A
-class A {
-	
-	// declaring a protected method m1()
-	protected void m1() { System.out.println("GFG"); }
-}
+        // import required packages
+        import java.io.*;
+        import java.util.*;
+        
+        // declaring a parent class A
+        class A {
+        	
+        	// declaring a protected method m1()
+        	protected void m1() { System.out.println("GFG"); }
+        }
 
-// creating a child class by extending the class A
-class B extends A {
-	
-	// main method
-	public static void main(String[] args)
-	{
-		// creating an object of parent class
-		// using parent reference
-		A a = new A();
+creating a child class by extending the class A
+
+        class B extends A {
+        	
+        	// main method
+        	public static void main(String[] args)
+        	{
+        		// creating an object of parent class
+        		// using parent reference
+        		A a = new A();
+        		
+        		/// calling method m1
+        		a.m1();
+        		
+        		// creating an object of child class
+        		// using child reference
+        		B b = new B();
 		
-		/// calling method m1
-		a.m1();
-		
-		// creating an object of child class
-		// using child reference
-		B b = new B();
-		
-		// calling method m1
-		b.m1();
-		
-		// creating an object of child class
-		// using parent reference
-		A a1 = new B();
-		
-		// calling m1 method
-		a1.m1();
-	}
-}
+        		// calling method m1
+        		b.m1();
+        		
+        		// creating an object of child class
+        		// using parent reference
+        		A a1 = new B();
+        		
+        		// calling m1 method
+        		a1.m1();
+        	}
+        }
 
 
 
@@ -1218,34 +1208,33 @@ If a variable or methods or constructor is declared as private then we can acces
 the class we can’t access them
 
 
-// Java program to showcase the example
-// of private access modifier
+Java program to showcase the example  of private access modifier
 
-// import required packages
-import java.io.*;
+        // import required packages
+        import java.io.*;
+        
+        import java.util.*;
+        
+        // helper class
+        class A {
+        	
+        	// helper method
+        	private void m1() { System.out.println("GFG"); }
+        }
 
-import java.util.*;
-
-// helper class
-class A {
-	
-	// helper method
-	private void m1() { System.out.println("GFG"); }
-}
-
-// driver class
-class B {
-	
-	// main method
-	public static void main(String[] args)
-	{
-		// creating an object of type class A
-		A a = new A();
-		
-		// accessing the method m1()
-		a.m1();
-	}
-}
+        // driver class
+        class B {
+        	
+        	// main method
+        	public static void main(String[] args)
+        	{
+        		// creating an object of type class A
+        		A a = new A();
+        		
+        		// accessing the method m1()
+        		a.m1();
+        	}
+        }
 
 Memory Management
 
@@ -1267,8 +1256,8 @@ To allocate memory to an object, we must use new(). So the object is always allo
 
 There are two ways to create an object  of string in java:
 
-By string literal    String x = "Anunay"   String y = "Anunay"  in Memory only once Anunay is created and both x and y refernces that only.
-By new keyword    String x = new String("Anunay")  String x = new String("Anunay") if we create like this in the pool two times Anunay is created.
+        By string literal    String x = "Anunay"   String y = "Anunay"  in Memory only once Anunay is created and both x and y refernces that only.
+        By new keyword    String x = new String("Anunay")  String x = new String("Anunay") if we create like this in the pool two times Anunay is created.
 
 
 Stack vs Heap Memory Allocation
@@ -1297,11 +1286,11 @@ will be executed or not i.e if a certain condition is true then a block of state
 
 Syntax: 
 
-if(condition) 
-{
-   // Statements to execute if
-   // condition is true
-}
+        if(condition) 
+        {
+           // Statements to execute if
+           // condition is true
+        }
 
 
 
@@ -1311,16 +1300,16 @@ statement to execute a block of code when the condition is false.
 
 Syntax: 
 
-if (condition)
-{
-    // Executes this block if
-    // condition is true
-}
-else
-{
-    // Executes this block if
-    // condition is false
-}
+        if (condition)
+        {
+            // Executes this block if
+            // condition is true
+        }
+        else
+        {
+            // Executes this block if
+            // condition is false
+        }
 
 
 
@@ -1329,22 +1318,22 @@ on the value of the expression.
 
 Syntax: 
 
-switch (expression)
-{
-  case value1:
-    statement1;
-    break;
-  case value2:
-    statement2;
-    break;
-  .
-  .
-  case valueN:
-    statementN;
-    break;
-  default:
-    statementDefault;
-}
+        switch (expression)
+        {
+          case value1:
+            statement1;
+            break;
+          case value2:
+            statement2;
+            break;
+          .
+          .
+          case valueN:
+            statementN;
+            break;
+          default:
+            statementDefault;
+        }
 
 Break: In Java, a break is majorly used for: 
 Terminate a sequence in a switch statement (discussed above).
@@ -1357,24 +1346,24 @@ Continue: Sometimes it is useful to force an early iteration of a loop. That is,
 the remainder of the code in its body for this particular iteration. This is, in effect, a goto just past the body of the loop, to the loop’s end.
 The continue statement performs such an action.
 
-// Java program to illustrate using
-// continue in an if statement
-import java.util.*;
+Java program to illustrate using continue in an if statement
 
-class ContinueDemo {
-	public static void main(String args[])
-	{
-		for (int i = 0; i < 10; i++) {
-			// If the number is even
-			// skip and continue
-			if (i % 2 == 0)
-				continue;
-
-			// If number is odd, print it
-			System.out.print(i + " ");
-		}
-	}
-}
+        import java.util.*;
+        
+        class ContinueDemo {
+        	public static void main(String args[])
+        	{
+        		for (int i = 0; i < 10; i++) {
+        			// If the number is even
+        			// skip and continue
+        			if (i % 2 == 0)
+        				continue;
+        
+        			// If number is odd, print it
+        			System.out.print(i + " ");
+        		}
+        	}
+        }
 
 
 A while loop is a control flow statement that allows code to be executed repeatedly based on a given Boolean condition. The while loop can be 
@@ -1382,26 +1371,23 @@ thought of as a repeating if statement.
 
 Syntax :
 
-while (boolean condition)
-{
-   loop statements...
-}
-
-import java.io.*;
-
-class Hello {
-	public static void main (String[] args) {
-	int i=0;
-	while (i<=10)
-	{
-		System.out.println(i);
-		i++;
-	}
-	}
-}
-
-
-
+        while (boolean condition)
+        {
+           loop statements...
+        }
+        
+        import java.io.*;
+        
+        class Hello {
+        	public static void main (String[] args) {
+        	int i=0;
+        	while (i<=10)
+        	{
+        		System.out.println(i);
+        		i++;
+        	}
+        	}
+        }
 
 
 
@@ -1409,17 +1395,17 @@ for loop: for loop provides a concise way of writing the loop structure. Unlike 
 condition and increment/decrement in one line thereby providing a shorter, easy to debug structure of looping. 
 
 
-import java.io.*;
-
-class Hello {
-	public static void main (String[] args) {
-	for (int i=0;i<=10;i++)
-	{
-		System.out.println(i);
-	}
-	}
-}
-
+        import java.io.*;
+        
+        class Hello {
+        	public static void main (String[] args) {
+        	for (int i=0;i<=10;i++)
+        	{
+        		System.out.println(i);
+        	}
+        	}
+        }
+        
 
 
 for-each 
@@ -1431,26 +1417,26 @@ followed by a colon, which is then followed by the array name.
 In the loop body, you can use the loop variable you created rather than using an indexed array element. 
  
 It’s commonly used to iterate over an array or a Collections class (eg, ArrayList)
-
-import java.io.*; 
-
-class Easy 
-
-{ 
-
-	public static void main(String[] args) 
-
-	{ 
-
-		// array declaration 
-
-		int ar[] = { 10, 50, 60, 80, 90 }; 
-
-		for (int element : ar) 
-
-			System.out.print(element + " "); 
-	} 
-}
+        
+        import java.io.*; 
+        
+        class Easy 
+        
+        { 
+        
+        	public static void main(String[] args) 
+        
+        	{ 
+        
+        		// array declaration 
+        
+        		int ar[] = { 10, 50, 60, 80, 90 }; 
+        
+        		for (int element : ar) 
+        
+        			System.out.print(element + " "); 
+        	} 
+        }
 
 
 Wrapper Class
@@ -1473,6 +1459,7 @@ wrapper class.Assigned to a variable of the corresponding wrapper class.
 
 
 CODE:
+
 		import java .util.*;
 		class home {
 	
@@ -1508,47 +1495,47 @@ Integer number = new Integer(5);  or  Integer number = Integer.valueOf(5);
 
 Character class->  Character ch = new Character('a');
 
-Methods in Character class                                                                      Methods in Integer Class
-
-toString(char ch)                                                                                    toString()
-Character.isLetter                                                                    valueOf() : returns the Integer object
-Character.isDigit('0')
-Character.isWhitespace                                                            parseInt() : returns int value by parsing the string
-isUpperCase
-Character.isLowerCase                                                     compareTo() : Used to compare two Integer objects for numerical equality.
-toUpperCase       
+        Methods in Character class                                                     Methods in Integer Class
+        
+        toString(char ch)                                                                   toString()
+        Character.isLetter                                                      valueOf() : returns the Integer object
+        Character.isDigit('0')
+        Character.isWhitespace                                            parseInt() : returns int value by parsing the string
+        isUpperCase
+        Character.isLowerCase                                      compareTo() : Used to compare two Integer objects for numerical equality.
+        toUpperCase       
 
 
 
 STRINGS
 
-String str = "";  or String s = new String("");
+        String str = "";  or String s = new String("");
 
 StringBuilder
 
-StringBuilder sb = new StringBuilder();
-sb.append("GFG");
+        StringBuilder sb = new StringBuilder();
+        sb.append("GFG");
 
 
 
 String Methods
 
-s.charAt(i)
-"GeeksforGeeks".charAt(3); // returns  ‘k’
-
-GeeksforGeeks".substring(3); // returns “ksforGeeks”
-
-"GeeksforGeeks".substring(2, 5); // returns “eks”
-
-String s1 = ”Geeks”;
-String s2 = ”forGeeks”;
-String output = s1.concat(s2); // returns “GeeksforGeeks”
-
-String s = ”Learn Share Learn”;
-int output = s.indexOf(“Share”); // returns 6
-
-“Geeks”.equalsIgnoreCase(“Geeks”); // returns true
-Boolean out = “Geeks”.equals(“Geeks”); // returns true
+        s.charAt(i)
+        "GeeksforGeeks".charAt(3); // returns  ‘k’
+        
+        GeeksforGeeks".substring(3); // returns “ksforGeeks”
+        
+        "GeeksforGeeks".substring(2, 5); // returns “eks”
+        
+        String s1 = ”Geeks”;
+        String s2 = ”forGeeks”;
+        String output = s1.concat(s2); // returns “GeeksforGeeks”
+        
+        String s = ”Learn Share Learn”;
+        int output = s.indexOf(“Share”); // returns 6
+        
+        “Geeks”.equalsIgnoreCase(“Geeks”); // returns true
+        Boolean out = “Geeks”.equals(“Geeks”); // returns true
 
 
 
@@ -1593,36 +1580,40 @@ No need to declare size before hand in arraylist.
 
 Decalaration:
 
-ArrayList<Integer> l = new ArrayList<>();
+        ArrayList<Integer> l = new ArrayList<>();
 
 Methods in ArrayList
 
-l.add(x)  --> appends element at last
-l.add(x,3)  --> At specific index
-l.set(y,e)  --> changing elements
-l.remove --> deleteing elements
-Collections.sort(l);  --> sorts the list
-list.size()  --> size of list
-int[] arr = l.toArray() --> conversion to array
+        l.add(x)  --> appends element at last
+        l.add(x,3)  --> At specific index
+        l.set(y,e)  --> changing elements
+        l.remove --> deleteing elements
+        Collections.sort(l);  --> sorts the list
+        list.size()  --> size of list
+        int[] arr = l.toArray() --> conversion to array
 
 2. HashSet
 
 Objects that you insert in HashSet are not guaranteed to be inserted in the same order. Objects are inserted based on their hash code. no duplicates found in set
 
 
-Declaration:  HashSet<Integer> set = new HashSet<>();
+Declaration:  
 
-set.add(x);
-set.remove(x);
-using enhanced for loop is easy for iterating a hash set rather than using Iterator
-set.contains()
-set.size()
-isEmpty()
+        HashSet<Integer> set = new HashSet<>();
+
+Methods in HashSet
+
+        set.add(x);
+        set.remove(x);
+        using enhanced for loop is easy for iterating a hash set rather than using Iterator
+        set.contains()
+        set.size()
+        isEmpty()
 
 
 Linked Hash Set
 
-LinkedHashSet<String> hs = new LinkedHashSet<>();
+        LinkedHashSet<String> hs = new LinkedHashSet<>();
 
 Same as hash Set but in hashset the order is not retained where are it is not the case in LinkedHashSet
 
@@ -1632,7 +1623,7 @@ TreeSet
 TreeSet is basically an implementation of a self-balancing binary search tree like a Red-Black Tree. Therefore operations like add, remove, and search takes O(log(N)) time. The reason is that in a self-balancing tree, it is made sure that the height of the tree is always O(log(N)) for all the operations. Therefore, this is considered as one of the most efficient data structures in order to store the huge sorted data and perform operations on it. However, operations like printing N elements in the sorted order take O(N) time.
 
 
-TreeSet<String> treeSet = new TreeSet<>();
+        TreeSet<String> treeSet = new TreeSet<>();
 
 However, the insertion order is not retained in the TreeSet. Internally, for every element, the values are compared and sorted in ascending order. 
 
@@ -1643,14 +1634,17 @@ Follows FIFO order
 
 Being an interface the queue needs a concrete class for the declaration and the most common classes are the PriorityQueue and LinkedList in Java.
 
-Queue<String> queue = new LinkedList<>();
+        Queue<String> queue = new LinkedList<>();
 
-add, offer --> add elements to rear
-remove,poll --> removes elements from front
-peek(): Returns the element at the front of the queue without removing it orelse null
+Methods:
 
+        add, offer --> add elements to rear
+        remove,poll --> removes elements from front
+        peek(): Returns the element at the front of the queue without removing it orelse null
 
-Queue<String> pq = new PriorityQueue<>();
+Other way
+
+        Queue<String> pq = new PriorityQueue<>();
 
 The insertion order is not retained in the PriorityQueue. The elements are stored based on the priority order which is ascending by default. 
 
@@ -1661,6 +1655,7 @@ iterating Queue
         while (iterator.hasNext()) {
             System.out.print(iterator.next() + " ");
         }
+
 PriorityBlockingQueue: It is to be noted that both the implementations, the PriorityQueue and LinkedList are not thread-safe. PriorityBlockingQueue is one alternative implementation if thread-safe implementation is needed. PriorityBlockingQueue is an unbounded blocking queue that uses the same ordering rules as class PriorityQueue and supplies blocking retrieval operations. 
 
 
@@ -1669,23 +1664,25 @@ PriorityBlockingQueue: It is to be noted that both the implementations, the Prio
 
 The Deque (double-ended queue) interface in Java is a subinterface of the Queue interface and extends it to provide a double-ended queue, which is a queue that allows elements to be added and removed from both ends.
 
-Deque<Integer> deque = new ArrayDeque<>();
+        Deque<Integer> deque = new ArrayDeque<>();
 
-deque.add --> inbuit adds at last
-deque.addFirst(40);  --> adds at First
-deque.addLast(30)   --> adds at Last
-.getFirst, .getlast
-peek, peekFirst, peekLast
-poll, poolLast
-.removeFirstOccurrence("x");
+methods
 
+        deque.add --> inbuit adds at last
+        deque.addFirst(40);  --> adds at First
+        deque.addLast(30)   --> adds at Last
+        .getFirst, .getlast
+        peek, peekFirst, peekLast
+        poll, poolLast
+        .removeFirstOccurrence("x");
+        
 
 5. HashMap
 
 Hashmap stores as key value pairs ex: (a,1) (b,2) ....
  
-        // Adding elements to the Map
-        // using standard put() method
+        // Adding elements to the Map using standard put() method
+        
 	HashMap<String, Integer> map = new HashMap<>();
         map.put("vishal", 10);
         map.put("sachin", 30);
@@ -1693,10 +1690,10 @@ Hashmap stores as key value pairs ex: (a,1) (b,2) ....
 
 Methods
 
-map.containsKey(); map.containsKey()
-map.get() map.put();
-map.keySet() --> gives all keys
-map.EntrySet() 
+        map.containsKey(); map.containsKey()
+        map.get() map.put();
+        map.keySet() --> gives all keys
+        map.EntrySet() 
 
 Iterating in HashMap
 
@@ -1718,6 +1715,8 @@ Iterating in HashMap
 
 The LinkedHashMap Class is just like HashMap with an additional feature of maintaining an order of elements inserted into it. 
 TreeMap for Sorted Order.
+
+
 
 
 
