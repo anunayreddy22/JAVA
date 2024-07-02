@@ -1672,10 +1672,307 @@ TreeMap for Sorted Order.
 
 MULTITHREADING IN JAVA
 
+Multithreading is a Java feature that allows concurrent execution of two or more parts of a program for maximum utilization of CPU. Each part of such program is called a thread. So, threads are light-weight processes within a process.
+
+Threads can be created by using two mechanisms : 
+
+1.Extending the Thread class 
+2.Implementing the Runnable Interface
+
+
+1. By Extending Extending the Thread class 
+
+We create a class that extends the java.lang.Thread class. This class overrides the run() method available in the Thread class. A thread begins its life inside run() method. We create an object of our new class and call start() method to start the execution of a thread.
+
+Code:
+
+	// Code for thread creation by extending the Thread class
+	class MultithreadingDemo extends Thread {
+		public void run()
+		{
+			try {
+				// Displaying the thread that is running
+				System.out.println("Thread " + Thread.currentThread().getId() + " is running");
+			}
+			catch (Exception e) {
+				// Throwing an exception
+				System.out.println("Exception is caught");
+			}
+		}
+	}
+	
+	// Main Class
+	public class Multithread {
+		public static void main(String[] args)
+		{
+			int n = 8; // Number of threads
+			for (int i = 0; i < n; i++) {
+				MultithreadingDemo object = new MultithreadingDemo();
+				object.start();
+			}
+		}
+	}
+
+2. Thread creation by implementing the Runnable Interface
+
+We create a new class which implements java.lang.Runnable interface and override run() method. Then we instantiate a Thread object and call start() method on this object. 
+
+Code:
+
+	// Java code for thread creation by implementing the Runnable Interface
+	class MultithreadingDemo implements Runnable {
+		public void run()
+		{
+			try {
+				// Displaying the thread that is running
+				System.out.println("Thread " + Thread.currentThread().getId() + " is running");
+			}
+			catch (Exception e) {
+				// Throwing an exception
+				System.out.println("Exception is caught");
+			}
+		}
+	}
+	
+	// Main Class
+	class Multithread {
+		public static void main(String[] args)
+		{
+			int n = 8; // Number of threads
+			for (int i = 0; i < n; i++) {
+			    Thread object = new Thread(new MultithreadingDemo());
+			    object.start();
+			}
+		}
+	}
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Differences
+
+                                                Thread Class vs Runnable Interface 
+
+        If we extend the Thread class, our class cannot extend any other class because Java doesn’t support multiple inheritance.
+	If we implement the Runnable interface, our class can extend other base classes.
+	By extending Thread class it provides some inbuilt methods like yield(), interrupt() etc. that are not available in Runnable interface.
+	Using runnable will give you an object that can be shared amongst multiple threads. 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+ Lifecycle and States of a Thread in Java
+
+ 	New State  --> When a new thread is created, it is in the new state.
+	Runnable State -->  A thread that is ready to run is moved to a runnable state
+	Blocked State --> The thread will be in blocked state when it is trying to acquire a lock but currently the lock is acquired by the other thread
+	Waiting State  --> the thread will be in waiting state when it calls wait() method or join() method
+	Timed Waiting State -->  A thread lies in this state until the timeout is completed or until a notification is received. Thread.sleep()
+	Terminated State --> Exited wantedly or due to unforseen events.
+ 
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Important Points
+
+	1. The purpose of start() is to create a separate call stack for the thread. A separate call stack is created by it, and then run() is called by JVM.
+	2. When a program calls the start() method, a new thread is created and then the run() method is executed. But if we directly call the run() method then no new thread will be 			created and run() method will be executed as a normal method 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+SYNCHRONIZATION
+
+Multi-threaded programs may often come to a situation where multiple threads try to access the same resources and finally produce erroneous and unforeseen results.Java Synchronization is used to make sure by some synchronization method that only one thread can access the resource at a given point in time.
+
+
+Java Synchronized Blocks:
+
+All synchronized blocks synchronize on the same object and can only have one thread executed inside them at a time. All other threads attempting to enter the synchronized block are blocked until the thread inside the synchronized block exits the block.
+
+		synchronized(sync_object)
+		{
+		   // Access shared variables and other
+		   // shared resources
+		}
+
+
+Types of Synchronization
+
+
+Process Synchronization
+
+	Technique used to coordinate the execution of multiple processes. It ensures that the shared resources are safe and in order.
+
+Thread Synchronization
+
+Thread Synchronization is used to coordinate and ordering of the execution of the threads in a multi-threaded program. There are two types of thread synchronization:
+	
+	Mutual Exclusive
+	Cooperation (Inter-thread communication in Java)
+
+Mutual Exclusive
+
+Mutual Exclusive helps keep threads from interfering with one another while sharing data. There are three types of Mutual Exclusive mentioned below:
+
+	Synchronized method.
+	Synchronized block.
+	Static synchronization
+
+Cooperation (Inter-thread communication in Java)
+
+Inter-thread communication in Java is a mechanism in which a thread is paused running in its critical section and another thread is allowed to enter (or lock) in the same critical section to be executed.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Deadlock in Multithreading
+
+
+ 
 
 
 
 
+![22-2](https://github.com/anunayreddy22/JAVA/assets/156383908/60648815-4502-42e6-97c9-2e0f6db7a808)
+
+
+Deadlock is any situation in which no member of some group of entities can proceed because each waits for another member, including itself, to take action, such as sending a message or, more commonly, releasing a lock.
+
+We can avoid dead lock condition by knowing its possibilities. We can’t completely remove its possibility but we can reduce.
+
+Avoid Nested Locks : This is the main reason for dead lock. Dead Lock mainly happens when we give locks to multiple threads. 
+Avoid Unnecessary Locks : We should have lock only those members which are required. Having lock on unnecessarily can lead to dead lock.
+Using thread join : When one thread is waiting other to finish. If this condition occurs we can use Thread.join with maximum time you think the execution will take.
+
+
+Deadlock Prevention:
+
+The deadlock has the following characteristics:
+
+		Mutual Exclusion
+		Hold and Wait
+		No Preemption
+		Circular Wait
+
+  By Eliminationg these Characteristics we can prevent deadlock.
+
+
+  Deadlock Avoidance
+
+     Resource Allocatiob Graph (banker's Algorithm)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Serialization
+
+
+Serialization is a mechanism of converting the state of an object into a byte stream. Deserialization is the reverse process where the byte stream is used to recreate the actual Java object in memory. This mechanism is used to persist the object.
+
+
+
+
+
+
+
+![serialize-deserialize-java](https://github.com/anunayreddy22/JAVA/assets/156383908/ccb7403a-4853-4c51-92de-4d04e375c8e5)
+
+
+The byte stream created is platform independent. So, the object serialized on one platform can be deserialized on a different platform. To make a Java object serializable we implement the java.io.Serializable interface.
+
+The ObjectOutputStream class contains writeObject() method for serializing an Object. 
+
+
+	public final void writeObject(Object obj) throws IOException
+
+
+The ObjectInputStream class contains readObject() method for deserializing an object. 
+
+
+	public final Object readObject() throws IOException,ClassNotFoundException
+	
+	
+**Only the objects of those classes can be serialized which are implementing java.io.Serializable interface**
+
+
+	// Java code for serialization and deserialization of a Java object
+	import java.io.*;
+	
+	class Demo implements java.io.Serializable
+	{
+		public int a;
+		public String b;
+	
+		// Default constructor
+		public Demo(int a, String b)
+		{
+			this.a = a;
+			this.b = b;
+		}
+	
+	}
+	
+	class Test
+	{
+		public static void main(String[] args)
+		{ 
+			Demo object = new Demo(1, "geeksforgeeks");
+			String filename = "file.ser";
+			
+			// Serialization 
+			try
+			{ 
+				//Saving of object in a file
+				FileOutputStream file = new FileOutputStream(filename);
+				ObjectOutputStream out = new ObjectOutputStream(file);
+				
+				// Method for serialization of object
+				out.writeObject(object);
+				
+				out.close();
+				file.close();
+				
+				System.out.println("Object has been serialized");
+	
+			}
+			
+			catch(IOException ex)
+			{
+				System.out.println("IOException is caught");
+			}
+	
+	
+			Demo object1 = null;
+	
+			// Deserialization
+			try
+			{ 
+				// Reading the object from a file
+				FileInputStream file = new FileInputStream(filename);
+				ObjectInputStream in = new ObjectInputStream(file);
+				
+				// Method for deserialization of object
+				object1 = (Demo)in.readObject();
+				
+				in.close();
+				file.close();
+				
+				System.out.println("Object has been deserialized ");
+				System.out.println("a = " + object1.a);
+				System.out.println("b = " + object1.b);
+			}
+			
+			catch(IOException ex)
+			{
+				System.out.println("IOException is caught");
+			}
+			
+			catch(ClassNotFoundException ex)
+			{
+				System.out.println("ClassNotFoundException is caught");
+			}
+	
+		}
+	}
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
