@@ -19,13 +19,10 @@ This File Contains
     Arrays
     Strings
     Collection Frameworks
+    Exception Handling
     Multi Threading
     Synchronization
     Serialization
-    Exception Handling
-    File Handling
-    Java IO
-    Java Networking
     JDBC
 
 
@@ -1668,6 +1665,210 @@ Iterating in HashMap
 The LinkedHashMap Class is just like HashMap with an additional feature of maintaining an order of elements inserted into it. 
 TreeMap for Sorted Order.
 
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+EXCEPTION HANDLING
+
+Exception Handling in Java is one of the effective means to handle runtime errors so that the regular flow of the application can be preserved. Java Exception Handling is a mechanism to handle runtime errors such as ClassNotFoundException, IOException, SQLException, RemoteException, etc.
+
+
+Major reasons why an exception Occurs
+
+	Invalid user input
+	Device failure
+	Loss of network connection
+	Physical limitations (out-of-disk memory)
+	Code errors
+	Opening an unavailable file
+
+Difference between an error and an exception
+
+	Error: An Error indicates a serious problem that a reasonable application should not try to catch.
+	Exception: Exception indicates conditions that a reasonable application might try to catch.
+
+
+
+
+
+
+
+
+![Exceptions-in-Java-1-768](https://github.com/anunayreddy22/JAVA/assets/156383908/675b777a-37cd-4b28-b0d6-d816ec0dc0ba)
+
+
+
+
+
+
+
+
+Checked Exceptions: Checked exceptions are called compile-time exceptions because these exceptions are checked at compile-time by the compiler.
+ 
+Unchecked Exceptions: The unchecked exceptions are just opposite to the checked exceptions. The compiler will not check these exceptions at compile time. 
+
+
+Methoda to Print Exception Information
+
+1. printStackTrace()
+
+		class Anunay { 
+			public static void main (String[] args) { 
+			int a=5; 
+			int b=0; 
+			try{ 
+				System.out.println(a/b); 
+			} 
+			catch(ArithmeticException e){
+   
+				e.printStackTrace(); 
+			} 
+                    } 
+		} 
+
+Output
+
+	java.lang.ArithmeticException: / by zero
+
+ 2. toString()
+
+
+		class Anunay { 
+			public static void main (String[] args) { 
+			int a=5; 
+			int b=0; 
+			try{ 
+				System.out.println(a/b); 
+			} 
+			catch(ArithmeticException e){ 
+	 			System.out.println(e.toString()); 
+			} 
+		     } 
+		} 
+
+
+Built in Exceptions
+
+
+  	ArithmeticException: It is thrown when an exceptional condition has occurred in an arithmetic operation.
+	ArrayIndexOutOfBoundsException: It is thrown to indicate that an array has been accessed with an illegal index. 
+	ClassNotFoundException: This Exception is raised when we try to access a class whose definition is not found
+	FileNotFoundException: This Exception is raised when a file is not accessible or does not open.
+	IOException: It is thrown when an input-output operation failed or interrupted
+	InterruptedException: It is thrown when a thread is waiting, sleeping, or doing some processing, and it is interrupted.
+	NoSuchFieldException: It is thrown when a class does not contain the field (or variable) specified
+	NoSuchMethodException: It is thrown when accessing a method that is not found.
+	NullPointerException: This exception is raised when referring to the members of a null object. Null represents nothing
+	NumberFormatException: This exception is raised when a method could not convert a string into a numeric format.
+	RuntimeException: This represents an exception that occurs during runtime.
+	StringIndexOutOfBoundsException: It is thrown by String class methods to indicate that an index is either negative or greater than the size of the string
+	IllegalArgumentException :  error statement when the method receives an argument which is not accurately fit to the given condition. 
+	IllegalStateException :  error message when the method is not accessed for the particular operation in the application.
+
+
+ Java Try Catch Block
+
+ Try Block:
+
+ The try block contains a set of statements where an exception can occur.
+
+	try
+	{
+	    // statement(s) that might cause exception
+	}
+
+Catch Block:
+
+The catch block is used to handle the uncertain condition of a try block. A try block is always followed by a catch block, which handles the exception that occurs in the associated try block.
+
+	catch
+	{
+	   // statement(s) that handle an exception
+	   // examples, closing a connection, closing file, exiting the process after writing details to a log file.
+	}
+
+Throw: 
+
+The throw keyword is used to transfer control from the try block to the catch block. 
+
+
+	class ThrowExcep {
+		static void help()
+		{
+			try {
+				throw new NullPointerException("error_unknown");
+			}
+			catch (NullPointerException e) {
+				System.out.println("Caught inside help().");
+				// rethrowing the exception
+				throw e;
+			}
+		}
+	
+		public static void main(String args[])
+		{
+			try {
+				help();
+			}
+			catch (NullPointerException e) {
+				System.out.println("Caught in main error name given below:");
+				System.out.println(e);
+			}
+		}
+	}
+
+
+Throws:
+
+The throws keyword is used for exception handling without try & catch block. It specifies the exceptions that a method can throw to the caller and does not handle itself. 
+
+
+
+	class ThrowsExecp {
+	
+		// This method throws an exception to be handled by caller or caller of caller and so on.
+		static void fun() throws IllegalAccessException
+		{
+			System.out.println("Inside fun(). ");
+			throw new IllegalAccessException("demo");
+		}
+	
+		// This is a caller function 
+		public static void main(String args[])
+		{
+			try {
+				fun();
+			}
+			catch (IllegalAccessException e) {
+				System.out.println("caught in main.");
+			}
+		}
+	}
+
+Finally Block:
+
+It is executed after the catch block. We use it to put some common code (to be executed irrespective of whether an exception has occurred or not ) 
+
+		try {
+	            result = a / (b - c);
+	            System.out.println("result" + result);
+	        }
+	 
+	        catch (ArithmeticException e) {
+	            System.out.println("Exception caught:Division by zero");
+	        }
+	 
+	        finally {
+	            System.out.println("I am in final block");
+	        }
+	
+
+
+
+
+
+
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 MULTITHREADING IN JAVA
@@ -1752,7 +1953,7 @@ Differences
 
                                                 Thread Class vs Runnable Interface 
 
-        If we extend the Thread class, our class cannot extend any other class because Java doesn’t support multiple inheritance.
+	If we extend the Thread class, our class cannot extend any other class because Java doesn’t support multiple inheritance.
 	If we implement the Runnable interface, our class can extend other base classes.
 	By extending Thread class it provides some inbuilt methods like yield(), interrupt() etc. that are not available in Runnable interface.
 	Using runnable will give you an object that can be shared amongst multiple threads. 
@@ -1975,33 +2176,7 @@ The ObjectInputStream class contains readObject() method for deserializing an ob
 ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+JDBC ( Java Database Connectivity)
 
 
 
