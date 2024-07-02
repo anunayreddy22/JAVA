@@ -59,6 +59,7 @@ Before learning Java, one must be familiar with these common terms of Java.
     However, programmers should be careful about their code whether they are using objects that have been used for a long time. Because Garbage 
     cannot recover the memory of objects being referenced.
 
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Features of Java
     
@@ -103,7 +104,7 @@ Features of Java
     to execute faster.
 
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 JDK(Java Development Kit)
 
@@ -161,7 +162,7 @@ Machine code is a set of instructions that is directly machine-understandable an
 Machine code is in binary (0’s and 1’s) format which is completely different from the byte code and source code. It is regarded as the most 
 lowest-level representation of the source code. Machine code is obtained after compilation or interpretation. It is also called machine language.
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 JAVA Basic Syntax
 
@@ -228,7 +229,7 @@ It is most common and used way to create an object in Java
             halogen.turnOff();
           }
         }
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Naming Conventions in Java 
     
@@ -265,7 +266,7 @@ Variable names should not start with underscore _ or dollar sign $ characters, e
 One-character variable names should be avoided except for temporary variables.
 Common names for temporary variables are i, j, k, m, and n for integers; c, d, and e for characters.
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
     
 Java Hello World Program
     
@@ -294,6 +295,7 @@ String[]: The main method accepts a single argument, i.e., an array of elements 
 main(): Name configured in the JVM. The main method must be inside the class definition. The compiler executes the codes starting always from 
         the main function.
 
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 DATA TYPES
 
@@ -312,7 +314,7 @@ Non-Primitive Data Type: String, Array, etc.
 	float - 32 bits
 	double - 64 bits
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 IDENTIFIERS
     
@@ -352,7 +354,7 @@ Examples of invalid identifiers :
         variable-2 // hyphen is not an alphanumeric character
         sum_&_difference // ampersand is not an alphanumeric character
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 OPERATORS
 
@@ -506,6 +508,7 @@ They can be used when we have to multiply or divide a number by two. General for
 	>>, Signed Right shift operator: shifts the bits of the number to the right and fills 0 on voids left as a result. The leftmost bit depends on the sign of the initial number 
 	>>>, Unsigned Right shift operator: shifts the bits of the number to the right and fills 0 on voids left as a result. The leftmost bit is set to 0
 
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Variables
 
@@ -685,6 +688,7 @@ A variable declared inside pair of brackets “{” and “}” in a method has 
             }
         }
 
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 INPUT / OUTPUT
 
@@ -826,7 +830,7 @@ version of print(). It prints any argument passed to it and adds a new line to t
 the Standard Output Stream.
 
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Constructors
 
@@ -969,7 +973,7 @@ own copy constructor by passing the object of the same class to the other instan
             }
         }
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 this reference
 
@@ -1037,7 +1041,7 @@ Output:
         Name has been changed to: PQR
 
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Access Modifiers
 
@@ -1179,6 +1183,8 @@ Java program to showcase the example  of private access modifier
         	}
         }
 
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Memory Management
 
 
@@ -1220,7 +1226,8 @@ Every time when we made an object it always creates in Heap-space and the refere
 Stack-memory. Heap memory allocation isn’t as safe as Stack memory allocation because the data stored in this space is accessible or visible 
 to all threads. If a programmer does not handle this memory well, a memory leak can happen in the program.
 
-	
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Flow Control
 
 
@@ -1279,7 +1286,6 @@ Syntax:
 Break: In Java, a break is majorly used for: 
 Terminate a sequence in a switch statement (discussed above).
 To exit a loop.
-
 
 
 
@@ -1378,6 +1384,7 @@ It’s commonly used to iterate over an array or a Collections class (eg, ArrayL
         	} 
         }
 
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Wrapper Class
 
@@ -1445,7 +1452,7 @@ Integer number = new Integer(5);  or  Integer number = Integer.valueOf(5);
         Character.isLowerCase                                      compareTo() : Used to compare two Integer objects for numerical equality.
         toUpperCase       
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 STRINGS
 
@@ -1509,6 +1516,7 @@ Input : String --> is "2+3-1*8/4" and Delimiters are +,*,-,/
 Output: Tokens --> "2","3","1","8","4".
 
 
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Java Collections
 
@@ -1531,6 +1539,8 @@ Methods in ArrayList
         Collections.sort(l);  --> sorts the list
         list.size()  --> size of list
         int[] arr = l.toArray() --> conversion to array
+
+------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
 2. HashSet
 
@@ -1567,6 +1577,7 @@ TreeSet is basically an implementation of a self-balancing binary search tree li
 
 However, the insertion order is not retained in the TreeSet. Internally, for every element, the values are compared and sorted in ascending order. 
 
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 3. Queue
 
@@ -1599,6 +1610,7 @@ iterating Queue
 PriorityBlockingQueue: It is to be noted that both the implementations, the PriorityQueue and LinkedList are not thread-safe. PriorityBlockingQueue is one alternative implementation if thread-safe implementation is needed. PriorityBlockingQueue is an unbounded blocking queue that uses the same ordering rules as class PriorityQueue and supplies blocking retrieval operations. 
 
 
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 4. Deque
 
@@ -1615,7 +1627,7 @@ methods
         peek, peekFirst, peekLast
         poll, poolLast
         .removeFirstOccurrence("x");
-        
+------------------------------------------------------------------------------------------------------------------------------------------------------        
 
 5. HashMap
 
@@ -1656,6 +1668,7 @@ Iterating in HashMap
 The LinkedHashMap Class is just like HashMap with an additional feature of maintaining an order of elements inserted into it. 
 TreeMap for Sorted Order.
 
+------------------------------------------------------------------------------------------------------------------------------------------------------
 
 MULTITHREADING IN JAVA
 
