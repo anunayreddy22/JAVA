@@ -144,10 +144,6 @@ execute the native code, as compared to having the JVM interpret the same sequen
 translation process. This subsequently leads to performance gains in the execution speed, unless the compiled methods are executed less frequently.
 
 
-At Compile Time                            At Run time
-    
-sourcecode.java -> Compiler -> ByteCode ->  JIT Compiler-> Native Machine code
-
 
 
 Byte Code 
@@ -201,9 +197,7 @@ It is most common and used way to create an object in Java
         
         class Lamp {
           
-          // stores the value for light
-          // true if light is on
-          // false if light is off
+          // stores the value for light, true if light is on or else false if light is off
           boolean isOn;
         
           // method to turn on the light
@@ -227,12 +221,10 @@ It is most common and used way to create an object in Java
             Lamp led = new Lamp();
             Lamp halogen = new Lamp();
         
-            // turn on the light by
-            // calling method turnOn()
+            // turn on the light by calling method turnOn()
             led.turnOn();
         
-            // turn off the light by
-            // calling method turnOff()
+            // turn off the light by calling method turnOff()
             halogen.turnOff();
           }
         }
@@ -311,14 +303,14 @@ to cover up all test cases. Java has two categories in which data types are segr
 Primitive Data Type: Boolean, char, int, short, byte, long, float, and double
 Non-Primitive Data Type: String, Array, etc.
 
-Boolean - 1 bit   
-byte - 8 bits     
-char - 16 bits    
-short - 16 bits   
-int - 32 bits    
-long - 64 buts    
-float - 32 bits
-double - 64 bits
+	Boolean - 1 bit   
+	byte - 8 bits     
+	char - 16 bits    
+	short - 16 bits   
+	int - 32 bits    
+	long - 64 buts    
+	float - 32 bits
+	double - 64 bits
 
 
 
@@ -454,20 +446,15 @@ the ‘:’.
 
         Sample Code:
         
-        // Java program to illustrate
-        // max of three numbers using
-        // ternary operator.
+        // Java program to illustrate max of three numbers using ternary operator.
         public class operators {
             public static void main(String[] args)
             {
                 int a = 20, b = 10, c = 30, result;
         
-                // result holds max of three
-                // numbers
-                result
-                    = ((a > b) ? (a > c) ? a : c : (b > c) ? b : c);
-                System.out.println("Max of three numbers = "
-                                   + result);
+                // result holds max of three numbers
+                result = ((a > b) ? (a > c) ? a : c : (b > c) ? b : c);
+                System.out.println("Max of three numbers = " + result);
             }
         }
 
@@ -486,13 +473,11 @@ They are used when performing update and query operations of the Binary indexed 
 
 Sample Code:
 
-        // Java Program to implement
-        // bitwise operators
+        // Java Program to implement bitwise operators
         import java.io.*;
         
         // Driver class
         class GFG {
-            // main function
             public static void main(String[] args)
             {
                 // Bitwise operators
@@ -517,9 +502,9 @@ They can be used when we have to multiply or divide a number by two. General for
 
                      number  shift_op  number_of_places_to_shift;
 
-<<, Left shift operator: shifts the bits of the number to the left and fills 0 on voids left as a result. Similar effect as multiplying the number with some power of two.
->>, Signed Right shift operator: shifts the bits of the number to the right and fills 0 on voids left as a result. The leftmost bit depends on the sign of the initial number. 
->>>, Unsigned Right shift operator: shifts the bits of the number to the right and fills 0 on voids left as a result. The leftmost bit is set to 0.
+	<<, Left shift operator: shifts the bits of the number to the left and fills 0 on voids left as a result. Similar effect as multiplying the number with some power of two
+	>>, Signed Right shift operator: shifts the bits of the number to the right and fills 0 on voids left as a result. The leftmost bit depends on the sign of the initial number 
+	>>>, Unsigned Right shift operator: shifts the bits of the number to the right and fills 0 on voids left as a result. The leftmost bit is set to 0
 
 
 Variables
@@ -551,8 +536,7 @@ These variables are created when the block is entered, or the function is called
 returns from the function. The scope of these variables exists only within the block in which the variables are declared, i.e., we can access 
 these variables only within that block. Initialization of the local variable is mandatory before using it in the defined scope.
         
-         // Java Program to implement
-        // Local Variables
+        //Program to implement Local Variables
         import java.io.*;
         
         class Java {
@@ -579,8 +563,7 @@ Instance variables can be accessed only by creating objects. We initialize insta
 We can also use instance blocks to initialize the instance variables.
 
         
-        // Java Program to demonstrate
-        // Instance Variables
+        Program to demonstrate Instance Variables
         import java.io.*;
         
         class Java {
@@ -591,8 +574,7 @@ We can also use instance blocks to initialize the instance variables.
         	public Integer I;
         	public Java()
         	{
-        		// Default Constructor
-        		// initializing Instance Variable
+        		// Default Constructor initializing Instance Variable
         		this.geek = "Shubham Jain";
         	}
         
@@ -604,17 +586,15 @@ We can also use instance blocks to initialize the instance variables.
         
         		// Displaying O/P
         		System.out.println("Geek name is: " + name.geek);
-        		System.out.println("Default value for int is "
-        						+ name.i);
+        		System.out.println("Default value for int is " + name.i);
         	
         		// toString() called internally
-        		System.out.println("Default value for Integer is "
-        						+ name.I);
+        		System.out.println("Default value for Integer is " + name.I);
         	}
         }
 
 
-// Just take a glance we will learn in depth of what is a constructor and this. reference  soon
+Just take a glance we will learn in depth of what is a constructor and this. reference  soon
 
 
 
@@ -629,8 +609,7 @@ execution ends. Initialization of a static variable is not mandatory. Its defaul
 For String it is null, for float it is 0.0f, for int it is 0, for Wrapper classes like Integer it is null, etc.
 
 
-        // Java Program to demonstrate
-        // Static variables
+        // Java Program to demonstrate Static variables
         import java.io.*;
         
         class GFG {
@@ -640,15 +619,12 @@ For String it is null, for float it is 0.0f, for int it is 0, for Wrapper classe
         	public static void main(String[] args)
         	{
         
-        		// geek variable can be accessed without object
-        		// creation Displaying O/P GFG.geek --> using the
-        		// static variable
+        		t
+        		// creation Displaying O/P GFG.geek --> using the static variable
         		System.out.println("Geek Name is : " + GFG.geek);
         
         		// static int c=0;
-        		// above line,when uncommented,
-        		// will throw an error as static variables cannot be
-        		// declared locally.
+        		// above line,when uncommented, will throw an error as static variables cannot be declared locally.
         	}
         }
 
@@ -661,8 +637,7 @@ These variables must be declared inside class (outside any function). They can b
 
         public class Test
         {
-            // All variables defined directly inside a class 
-            // are member variables
+            // All variables defined directly inside a class  are member variables
             int a;
             private String b;
             void method1() {....}
@@ -704,8 +679,7 @@ A variable declared inside pair of brackets “{” and “}” in a method has 
                     System.out.println(x);
                 }
                 
-                // Uncommenting below line would produce
-                // error since variable x is out of scope.
+                // Uncommenting below line would produce error since variable x is out of scope.
         
                 // System.out.println(x); 
             }
@@ -736,8 +710,7 @@ which reads an array of characters, and a readLine() function which reads a line
 InputStreamReader() is a function that converts the input stream of bytes into a stream of characters so that it can be read as 
 BufferedReader expects a stream of characters. BufferedReader can throw checked Exceptions.
 
-        // Java Program for taking user
-        // input using BufferedReader Class
+        Program for taking user input using BufferedReader Class
         import java.io.*;
         
         class GFG {
@@ -746,11 +719,8 @@ BufferedReader expects a stream of characters. BufferedReader can throw checked 
             public static void main(String[] args)
                 throws IOException
             {
-                // Creating BufferedReader Object
-                // InputStreamReader converts bytes to
-                // stream of character
-                BufferedReader bfn = new BufferedReader(
-                    new InputStreamReader(System.in));
+                // Creating BufferedReader Object InputStreamReader converts bytes to stream of character
+                BufferedReader bfn = new BufferedReader(new InputStreamReader(System.in));
         
                 // String reading internally
                 String str = bfn.readLine();
@@ -767,8 +737,7 @@ BufferedReader expects a stream of characters. BufferedReader can throw checked 
         }
 
 
-//We use Scanner class method only everywhere
-Using Scanner Class for Taking Input in Java
+We use Scanner class method only everywhere Using Scanner Class for Taking Input in Java
 
 	
 It is an advanced version of BufferedReader which was added in later versions of Java. The scanner can read formatted input. 
@@ -778,7 +747,7 @@ there is no exception thrown by it. It contains predefined functions to read an 
 	
 Syntax of Scanner class
 	
-Scanner scn = new Scanner(System.in);   --> Important
+	Scanner scn = new Scanner(System.in);  
 
 
 Importing Scanner Class
@@ -786,13 +755,10 @@ Importing Scanner Class
 ‘To use the Scanner we need to import the Scanner class from the util package as
 
 
-
-
         	
         import java.util.Scanner;  
         
-        // Java Program to show how to take
-        // input from user using Scanner Class
+        Java Program to show how to take input from user using Scanner Class
         
         import java.util.*;
         
@@ -803,29 +769,25 @@ Importing Scanner Class
                 // Scanner definition
                 Scanner scn = new Scanner(System.in);
         
-                // input is a string ( one word )
-                // read by next() function
+                // input is a string ( one word ) read by next() function
                 String str1 = scn.next();
         
                 // print String
                 System.out.println("Entered String str1 : " + str1);
         
-                // input is a String ( complete Sentence )
-                // read by nextLine()function
+                // input is a String ( complete Sentence ) read by nextLine()function
                 String str2 = scn.nextLine();
         
                 // print string
                 System.out.println("Entered String str2 : " + str2);
         
-                // input is an Integer
-                // read by nextInt() function
+                // input is an Integer read by nextInt() function
                 int x = scn.nextInt();
         
                 // print integer
                 System.out.println("Entered Integer : " + x);
         
-                // input is a floatingValue
-                // read by nextFloat() function
+                // input is a floatingValue read by nextFloat() function
                 float f = scn.nextFloat();
         
                 // print floating value
@@ -873,8 +835,7 @@ In Java, a Constructor is a block of codes similar to the method. It is called w
 calling the constructor, memory for the object is allocated in the memory. It is a special type of method that is used to initialize the object. 
 Every time an object is created using the new() keyword, at least one constructor is called.
         
-        // Java Program to demonstrate
-        // Constructor
+        Program to demonstrate Constructor
         import java.io.*;
         
         // Driver Class
@@ -887,7 +848,6 @@ Every time an object is created using the new() keyword, at least one constructo
                 System.out.println("Constructor Called");
             }
         
-            // main function
             public static void main(String[] args)
             {
                 Geeks geek = new Geeks();
@@ -915,17 +875,14 @@ parameterized constructor. The default constructor changed into the parameterize
 default constructor. The default constructor can be implicit or explicit. If we don’t define explicitly, we get an implicit default constructor. 
 If we manually write a constructor, the implicit one is overridded.
 
-        // Java Program to demonstrate
-        // Default Constructor
+        Program to demonstrate Default Constructor
         import java.io.*;
         
-        // Driver class
         class GFG {
         
             // Default Constructor
             GFG() { System.out.println("Default constructor"); }
         
-            // Driver function
             public static void main(String[] args)
             {
                 GFG hello = new GFG();
@@ -1001,17 +958,14 @@ own copy constructor by passing the object of the same class to the other instan
                 // This would invoke the parameterized constructor.
                 System.out.println("First Object");
                 Geek geek1 = new Geek("Avinash", 68);
-                System.out.println("GeekName :" + geek1.name
-                                   + " and GeekId :" + geek1.id);
+                System.out.println("GeekName :" + geek1.name + " and GeekId :" + geek1.id);
         
                 System.out.println();
         
                 // This would invoke the copy constructor.
                 Geek geek2 = new Geek(geek1);
-                System.out.println(
-                    "Copy Constructor used Second Object");
-                System.out.println("GeekName :" + geek2.name
-                                   + " and GeekId :" + geek2.id);
+                System.out.println( "Copy Constructor used Second Object");
+                System.out.println("GeekName :" + geek2.name + " and GeekId :" + geek2.id);
             }
         }
 
@@ -1026,10 +980,8 @@ between the local and instance variables. Using “this” reference can improve
 
 
         
-        // Java Program to implement
-        // Java this reference
+        Program to implement Java this reference
         
-        // Driver Class
         public class Person {
         
         	// Fields Declared
@@ -1052,16 +1004,13 @@ between the local and instance variables. Using “this” reference can improve
         		this.name = name;
         	}
         
-        	// Method to Print the Details of
-        	// the person
+        	// Method to Print the Details of the person
         	public void printDetails()
         	{
         		System.out.println("Name: " + this.name);
         		System.out.println("Age: " + this.age);
         		System.out.println();
         	}
-        
-        	// main function
         	public static void main(String[] args)
         	{
         		// Objects Declared
@@ -1102,8 +1051,7 @@ In the below example we are creating a package pack1 inside that package we decl
 we declare a method m1 which is also public. Now we create another package pack2 and inside that pack2 we import pack1 and declare a class B and
 in class B’s main method we create an object of type class A and trying to access the data of method m1
         
-        // Java program to showcase the example
-        // of public access modifier
+        program to showcase the example of public access modifier
         
         // creating a package
         package pack1;
@@ -1133,11 +1081,9 @@ in class B’s main method we create an object of type class A and trying to acc
         
         // driver class
         class B {
-        	
-	// main method
-        	public static void main(String[] args)
-        	{
-        		// creating an object of type class A
+        	public static void main(String[] args){
+	 
+        	// creating an object of type class A
         		A a = new A();
         		
         		// accessing the method m1()
@@ -1217,15 +1163,12 @@ Java program to showcase the example  of private access modifier
         
         // helper class
         class A {
-        	
         	// helper method
         	private void m1() { System.out.println("GFG"); }
         }
 
         // driver class
         class B {
-        	
-        	// main method
         	public static void main(String[] args)
         	{
         		// creating an object of type class A
@@ -1302,13 +1245,11 @@ Syntax:
 
         if (condition)
         {
-            // Executes this block if
-            // condition is true
+            // Executes this block if condition is true
         }
         else
         {
-            // Executes this block if
-            // condition is false
+            // Executes this block if condition is false
         }
 
 
@@ -1354,10 +1295,9 @@ Java program to illustrate using continue in an if statement
         	public static void main(String args[])
         	{
         		for (int i = 0; i < 10; i++) {
-        			// If the number is even
-        			// skip and continue
+        			// If the number is evenkip and continue
         			if (i % 2 == 0)
-        				continue;
+        			    continue;
         
         			// If number is odd, print it
         			System.out.print(i + " ");
@@ -1493,7 +1433,7 @@ Intialization of a Wrapper Class
 
 Integer number = new Integer(5);  or  Integer number = Integer.valueOf(5);
 
-Character class->  Character ch = new Character('a');
+				Character class->  Character ch = new Character('a');
 
         Methods in Character class                                                     Methods in Integer Class
         
@@ -1521,7 +1461,7 @@ StringBuilder
 String Methods
 
         s.charAt(i)
-        "GeeksforGeeks".charAt(3); // returns  ‘k’
+        "GeeksforGeek".charAt(3); // returns  ‘k’
         
         GeeksforGeeks".substring(3); // returns “ksforGeeks”
         
@@ -1716,6 +1656,8 @@ Iterating in HashMap
 The LinkedHashMap Class is just like HashMap with an additional feature of maintaining an order of elements inserted into it. 
 TreeMap for Sorted Order.
 
+
+MULTITHREADING IN JAVA
 
 
 
