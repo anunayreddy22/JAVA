@@ -1,4 +1,4 @@
-This File Contains
+This File Contains Concepts Of Java Programming
 
     Java Terminology
     Features of Java
@@ -15,7 +15,6 @@ This File Contains
     Memory Allocation
     Flow Control
     Wrapper Class
-    OOPS
     Arrays
     Strings
     Collection Frameworks
@@ -23,7 +22,7 @@ This File Contains
     Multi Threading
     Synchronization
     Serialization
-    JDBC
+
 
 
 JAVA
@@ -2174,9 +2173,9 @@ The ObjectInputStream class contains readObject() method for deserializing an ob
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                               *** THE END***
 
-
-JDBC ( Java Database Connectivity)
+	                                                      "HAPPY LEARNING!"
 
 
 
